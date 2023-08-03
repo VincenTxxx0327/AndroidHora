@@ -2,6 +2,7 @@ package com.union.hora.business.user
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import com.union.hora.R
@@ -25,9 +26,9 @@ class SplashActivity : BaseActivity() {
     }
 
     override fun initView() {
-        alphaAnimation = AlphaAnimation(0.3F, 1.0F)
+        alphaAnimation = AlphaAnimation(0.1F, 1.0F)
         alphaAnimation?.run {
-            duration = 3000
+            duration = 2000
             setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationRepeat(p0: Animation?) {
                 }
@@ -40,7 +41,7 @@ class SplashActivity : BaseActivity() {
                 }
             })
         }
-        layout_splash.startAnimation(alphaAnimation)
+        iv_logo.startAnimation(alphaAnimation)
     }
 
     override fun initData() {
@@ -52,6 +53,7 @@ class SplashActivity : BaseActivity() {
     override fun initColor() {
         super.initColor()
         layout_splash.setBackgroundColor(mThemeColor)
+        window.navigationBarColor = mThemeColor
     }
 
     fun jumpToMain() {

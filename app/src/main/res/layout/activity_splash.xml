@@ -8,10 +8,10 @@
 
     <com.union.hora.widget.CircleImageView
         android:id="@+id/iv_logo"
-        android:layout_width="@dimen/dp_110"
-        android:layout_height="@dimen/dp_110"
+        android:layout_width="@dimen/dp_180"
+        android:layout_height="@dimen/dp_180"
         app:borderColor="@color/white"
-        app:borderWidth="2dp"
+        app:borderWidth="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

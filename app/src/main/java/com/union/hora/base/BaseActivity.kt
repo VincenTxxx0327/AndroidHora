@@ -69,19 +69,12 @@ abstract class BaseActivity : AppCompatActivity(), ActivityAction {
     }
 
     override fun initColor() {
-        mThemeColor = if (!SettingUtil.getIsNightMode()) {
-            SettingUtil.getColor()
-        } else {
-            resources.getColor(R.color.colorPrimary)
-        }
+        mThemeColor = SettingUtil.getColor()
         StatusBarUtil.setColor(this, mThemeColor, 0)
-        if (this.supportActionBar != null) {
-            this.supportActionBar?.setBackgroundDrawable(ColorDrawable(mThemeColor))
-        }
         if (SettingUtil.getNavBar()) {
             window.navigationBarColor = CircleView.shiftColorDown(mThemeColor)
         } else {
-            window.navigationBarColor = Color.BLACK
+            window.navigationBarColor = Color.argb(125, 255, 255, 255)
         }
     }
 

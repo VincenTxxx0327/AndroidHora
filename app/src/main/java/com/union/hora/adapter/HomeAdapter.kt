@@ -20,8 +20,7 @@ class HomeAdapter : BaseQuickAdapter<Moment, BaseViewHolder>(R.layout.item_commo
         holder.setText(R.id.tv_moment_title, Html.fromHtml(item.content))
             .setText(R.id.tv_moment_author, item.memberName)
             .setText(R.id.tv_moment_likeNum, item.likes.toString())
-        val params = holder.getView<ImageView>(R.id.iv_moment_image).layoutParams
         GlideUtil.load(context, item.contentImages, holder.getView(R.id.iv_moment_image))
-        GlideUtil.load(context, item.memberImg, holder.getView(R.id.iv_moment_authorImg))
+        GlideUtil.loadCircle(context, item.memberImg, holder.getView(R.id.iv_moment_authorImg))
     }
 }

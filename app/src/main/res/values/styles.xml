@@ -12,21 +12,6 @@
         <item name="android:listDivider">@drawable/bg_divider</item>
     </style>
 
-<!--    <style name="AppTheme" parent="BaseAppTheme.NoActionBar"></style>-->
-
-    <style name="AppTheme.FullScreen" parent="@style/Theme.AppCompat.DayNight">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowBackground">@null</item>
-        <item name="android:windowDisablePreview">true</item>
-    </style>
-
-    <style name="SplashTheme" parent="BaseAppTheme.NoActionBar">
-        <item name="android:windowFullscreen">true</item>
-    </style>
-
     <style name="BaseAppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

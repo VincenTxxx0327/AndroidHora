@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hora">
-        <activity
-            android:name=".home.TestActivity"
-            android:exported="false" />
+
         <activity
             android:name=".home.MainActivity"
             android:launchMode="singleTask"></activity>
@@ -25,8 +23,7 @@
 
         <activity
             android:name=".business.user.SplashActivity"
-            android:exported="true"
-            android:theme="@style/SplashTheme">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +33,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".business.data.ContentActivity" />
-        <activity android:name=".business.common.KnowledgeActivity" />
         <activity android:name=".business.user.UserActivity" />
         <activity android:name=".business.data.CommonActivity" />
         <activity android:name=".business.setting.SettingActivity" />
@@ -59,10 +55,6 @@
 
         <receiver android:name=".app.receiver.NetworkChangeReceiver" />
 
-        <activity android:name=".business.data.TodoActivity" />
-        <activity android:name=".business.common.ScoreActivity" />
-        <activity android:name=".business.common.RankActivity" />
-        <activity android:name=".business.common.ShareActivity" />
     </application>
 
 </manifest>

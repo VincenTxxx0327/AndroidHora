@@ -32,8 +32,7 @@ class CircleImageView(context: Context, attrs: AttributeSet) : AppCompatImageVie
         mType = ta.getInt(R.styleable.CircleImageView_type, DEFAULT_TYPE)
         mBorderColor = ta.getColor(R.styleable.CircleImageView_borderColor, DEFAULT_BORDER_COLOR)
         mBorderWidth = ta.getDimensionPixelSize(R.styleable.CircleImageView_borderWidth, dip2px(DEFAULT_BORDER_WIDTH))
-        mRectRoundRadius =
-            ta.getDimensionPixelSize(R.styleable.CircleImageView_rectRoundRadius, dip2px(DEFAULT_RECT_ROUND_RADIUS))
+        mRectRoundRadius = ta.getDimensionPixelSize(R.styleable.CircleImageView_rectRoundRadius, dip2px(DEFAULT_RECT_ROUND_RADIUS))
         ta.recycle()
     }
 
@@ -111,6 +110,7 @@ class CircleImageView(context: Context, attrs: AttributeSet) : AppCompatImageVie
                 canvas.drawARGB(Color.alpha(color), Color.red(color), Color.green(color), Color.blue(color))
                 bitmap
             }
+
             else -> null
         }
     }
