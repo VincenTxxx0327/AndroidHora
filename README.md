@@ -1,0 +1,6 @@
+# AndroidHora
+
+一个Kotlin为主要开发语言的Android项目，建立的一个关于户外爱好者的APP平台，拟推出Web版本处于计划阶段
+API由Spring boot主体架构，Tomcat搭建的服务器提供，符合restful风格
+
+APP内使用MVP架构，糅合OKHttp+Retrofit+RxJava的混合网络框架，结合Jecpack的常用组件：Livedata、ViewModel、Lifecycler等
