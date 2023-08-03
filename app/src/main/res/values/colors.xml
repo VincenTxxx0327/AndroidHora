@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/theme_blueLight</color>
+    <color name="colorPrimaryDark">@color/theme_blueDeep</color>
+    <color name="colorAccent">@color/Cyan</color>
+    <color name="textColorPrimary">#616161</color>
+    <color name="viewBackground">@color/White</color>
+    <color name="windowBackground">@color/Grey100</color>
+    <color name="line_divider">@color/Grey300</color>
+    <color name="list_divider">@color/Grey400</color>
+    <color name="mask_color">#f5f5f5</color>
+
+    <!-- item -->
+    <color name="common_color">#19191B</color>
+    <color name="item_title">#19191B</color>
+    <color name="item_author">@color/Grey700</color>
+    <color name="item_desc">@color/Grey600</color>
+    <color name="item_time">@color/Grey600</color>
+    <color name="item_date">@color/Grey600</color>
+    <color name="item_chapter">@color/Grey600</color>
+    <color name="item_tag_tv">#ffFFFFFF</color>
+    <color name="item_nav_color_tv">#19191B</color>
+    <color name="color_title_bg">#CCFFFFFF</color>
+    <color name="color_about_tv">@color/Grey600</color>
+    <color name="transparent_75">#ba000000</color>
+    <color name="vertical_tab_layout_bg">@color/Grey100</color>
+    <color name="vertical_tab_layout_indicator_color">@color/White</color>
+    <color name="item_flow_layout_bg">@color/Grey200</color>
+    <color name="arrow_color">@color/Grey700</color>
+    <color name="sticky_header_bg">@color/Grey100</color>
+
+    <color name="light_red">#e26d2e</color>
+    <color name="deep_red">#dc3b1f</color>
+    <color name="while_most_color">#e4e4e4</color>
+    <color name="title_black">#222222</color>
+    <color name="grey_search">#FF999999</color>
+
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="Red">#f44336</color>
+    <color name="Pink">#e91e63</color>
+    <color name="Purple">#9c27b0</color>
+    <color name="Deep_Purple">#673ab7</color>
+    <color name="Indigo">#3f51b5</color>
+    <color name="Blue">#2196f3</color>
+    <color name="Light_Blue">#03a9f4</color>
+    <color name="Cyan">#00bcd4</color>
+    <color name="Teal">#009688</color>
+    <color name="Green">#4caf50</color>
+    <color name="Light_Green">#8bc34a</color>
+    <color name="Lime">#cddc39</color>
+    <color name="Yellow">#ffeb3b</color>
+    <color name="Amber">#ffc107</color>
+    <color name="Orange">#ff9800</color>
+    <color name="Deep_Orange">#ff5722</color>
+    <color name="Brown">#795548</color>
+    <color name="Grey">#9e9e9e</color>
+    <color name="Blue_Grey">#607d8b</color>
+
+    <color name="Grey50">#FAFAFA</color>
+    <color name="Grey100">#F5F5F5</color>
+    <color name="Grey200">#EEEEEE</color>
+    <color name="Grey300">#E0E0E0</color>
+    <color name="Grey400">#bdbdbd</color>
+    <color name="Grey500">#9e9e9e</color>
+    <color name="Grey600">#757575</color>
+    <color name="Grey700">#616161</color>
+    <color name="Grey800">#424242</color>
+    <color name="Grey900">#212121</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+    <color name="clarity">#00FFFFFF</color>
+    <color name="general">#e7e7e7</color>
+    <color name="background">#fdfdfe</color>
+    <color name="line">#333333</color>
+    <color name="hint">#999999</color>
+
+    <!--纯色调-->
+    <color name="gravy">#C0C0C0</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#2b8ad6</color>
+    <color name="gravy_deep2">#26292b</color>
+
+    <!--混合色-->
+    <color name="gravy_deep">#666666</color>
+    <color name="gravy_light">#999999</color>
+    <color name="yellow_deep">#fbba39</color>
+    <color name="blue_light">#83b6f7</color>
+
+    <!--带透明度的色调-->
+    <color name="black_10">#1A000000</color>
+    <color name="black_35">#46000000</color>
+    <color name="white_35">#46FFFFFF</color>
+    <color name="white_20">#1EFFFFFF</color>
+    <color name="white_60">#99ffffff</color>
+    <color name="gravy_60">#99EFEFEF</color>
+    <color name="white_99">#99FFFFFF</color>
+    <color name="white_EF">#EFFFFFFF</color>
+    <color name="gravy_30">#55c0c0c0</color>
+
+    <color name="theme_black">#FF3A3B3F</color>
+    <color name="theme_red">#FFFF5844</color>
+    <color name="theme_blueHover">#FFA6D3F2</color>
+    <color name="theme_blueLight">#FFBBD0FF</color>
+    <color name="theme_blueDeep">#FFB8C0FF</color>
+    <color name="theme_purpleDeep">#FFC8B6FF</color>
+    <color name="theme_purpleLight">#FFE7C6FF</color>
+    <color name="theme_pink">#FFFFD6FF</color>
+    <color name="theme_yellow">#FFF7D78C</color>
+    <color name="theme_green">#FFAFC3A8</color>
+    <color name="theme_gravy999">#999999</color>
+    <color name="theme_gravyDDD">#DDDDDD</color>
+    <color name="theme_gravyEEE">#EEEEEE</color>
+</resources>

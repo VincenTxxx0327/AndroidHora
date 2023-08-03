@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.union.hora.widget.WebContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/viewBackground">
+
+    <include layout="@layout/toolbar" />
+
+    <!--<include layout="@layout/container" />-->
+
+</com.union.hora.widget.WebContainer>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="colorPrimary" format="color" />
+    <attr name="colorPrimaryDark" format="color" />
+    <attr name="colorAccent" format="color" />
+    <attr name="textColorPrimary" format="color" />
+    <attr name="viewBackground" format="color" />
+
+    <declare-styleable name="CircleImageView">
+        <attr name="type" format="enum">
+            <enum name="none" value="0" />
+            <enum name="circle" value="1" />
+            <enum name="rect_rounded" value="2" />
+        </attr>
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="rectRoundRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="IconListPreference">
+        <attr name="iconsDrawables" format="reference" />
+    </declare-styleable>
+
+    <!-- TiltTextView -->
+    <declare-styleable name="TiltTextView">
+        <attr name="tiltBgColor" format="color" />
+        <attr name="tiltTextSize" format="dimension" />
+        <attr name="tiltText" format="string" />
+        <attr name="tiltTextColor" format="color" />
+        <attr name="tiltLength" format="dimension" />
+        <attr name="tiltMode" format="enum">
+            <enum name="left_top" value="0" />
+            <enum name="left_top_triangle" value="1" />
+            <enum name="left_bottom" value="2" />
+            <enum name="left_bottom_triangle" value="3" />
+            <enum name="right_top" value="4" />
+            <enum name="right_top_triangle" value="5" />
+            <enum name="right_bottom" value="6" />
+            <enum name="right_bottom_triangle" value="7" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MultipleStatusView">
+        <attr name="loadingView" format="reference" />
+        <attr name="errorView" format="reference" />
+        <attr name="emptyView" format="reference" />
+        <attr name="noNetworkView" format="reference" />
+        <attr name="contentView" format="reference" />
+    </declare-styleable>
+<!--    <declare-styleable name="MenuButtonsAttr">-->
+<!--        <attr name="fab_size" format="enum">-->
+<!--            <enum name="mini" value="10" />-->
+<!--            <enum name="middle" value="20" />-->
+<!--            <enum name="large" value="30" />-->
+<!--        </attr>-->
+<!--        <attr name="fab_showAnimation" format="reference" />-->
+<!--        <attr name="fab_hideAnimation" format="reference" />-->
+<!--        <attr name="fab_shadowColor" format="color" />-->
+<!--        <attr name="fab_colorNormal" format="color" />-->
+<!--        <attr name="fab_colorPressed" format="color" />-->
+<!--        <attr name="fab_colorRipple" format="color" />-->
+<!--    </declare-styleable>-->
+    <declare-styleable name="SlideMenuLayout">
+        <attr format="enum" name="slideMode">
+            <enum name="left" value="1001"/>
+            <enum name="right" value="1002"/>
+            <enum name="both" value="1003"/>
+            <enum name="none" value="1004"/>
+        </attr>
+        <attr format="dimension" name="slidePadding"/>
+        <attr format="integer" name="slideTime"/>
+        <attr format="boolean" name="parallax"/>
+        <attr format="float" name="contentAlpha"/>
+        <attr format="color" name="contentShadowColor"/>
+        <attr format="boolean" name="contentToggle"/>
+        <attr format="boolean" name="allowDragging"/>
+    </declare-styleable>
+</resources>
