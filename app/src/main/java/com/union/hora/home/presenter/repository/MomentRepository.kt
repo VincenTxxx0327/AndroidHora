@@ -6,21 +6,18 @@ import com.union.hora.home.model.MomentModel
 import com.union.hora.http.bean.Banner
 import com.union.hora.http.bean.CommonResponse
 import com.union.hora.http.bean.Moment
-import com.union.hora.http.bean.MomentResponseBody
 import com.union.hora.http.bean.Page
 
 
 class MomentRepository {
     companion object {
         private const val TAG = "MomentRepository"
-        var instance: MomentRepository? = null
-            get() {
-                if (field == null) {
-                    field = MomentRepository()
-                }
-                return field
-            }
-            private set
+        @Volatile
+        private var instance: MomentRepository? = null
+
+        fun getInstance() = instance ?: synchronized(this) {
+            instance ?: MomentRepository().also { instance = it }
+        }
     }
 
     fun loadAdvertData(model: MomentModel, view: MomentContract.View?, onSuccess: (CommonResponse<Page<Banner>>) -> Unit) {

@@ -8,14 +8,12 @@ import com.union.hora.utils.Preference
 class UserRepository {
     companion object {
         private const val TAG = "UserRepository"
-        var instance: UserRepository? = null
-            get() {
-                if (field == null) {
-                    field = UserRepository()
-                }
-                return field
-            }
-            private set
+        @Volatile
+        private var instance: UserRepository? = null
+
+        fun getInstance() = instance ?: synchronized(this) {
+            instance ?: UserRepository().also { instance = it }
+        }
     }
 
     val hasLogin: Boolean by Preference(Constant.LOGIN_KEY, false)
