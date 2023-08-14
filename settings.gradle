@@ -1,2 +1,5 @@
 include ':app'
 rootProject.name = "Hora"
+include ':library-base'
+include ':library-network'
+include ':library-video'

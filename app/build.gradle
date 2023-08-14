@@ -2,19 +2,20 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-
-    compileSdkVersion 33
-    buildToolsVersion '33.0.2'
+    namespace 'com.union.hora'
+    compileSdk rootProject.ext.android.compileSdk
+    buildToolsVersion rootProject.ext.android.buildTools
 
     defaultConfig {
-        applicationId "com.union.hora"
-        minSdkVersion 26
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0.0"
+        minSdk rootProject.ext.android.minSdk
+        targetSdk rootProject.ext.android.targetSdk
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        applicationId rootProject.ext.android.applicationId
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,19 +32,22 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    namespace 'com.union.hora'
     sourceSets {
         main {
             aidl {
                 srcDirs 'src\\main\\aidl'
             }
         }
+    }
+    resourcePrefix "app_"
+    dataBinding {
+        enabled true
     }
     buildFeatures {
         aidl = true
@@ -52,6 +56,12 @@ android {
 }
 
 dependencies {
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // ViewModel utilities for Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
