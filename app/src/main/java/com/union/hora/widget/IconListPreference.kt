@@ -1,7 +1,7 @@
 package com.union.hora.widget
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.preference.ListPreference
@@ -59,9 +59,9 @@ class IconListPreference(context: Context, attrs: AttributeSet) : ListPreference
         }
     }
 
-    override fun onPrepareDialogBuilder(builder: AlertDialog.Builder) {
-        builder.setAdapter(createListAdapter(), this)
-        builder.setNegativeButton(context.getString(R.string.cancel)) { dialog, which -> dialog.dismiss() }
+    override fun onPrepareDialogBuilder(builder: android.app.AlertDialog.Builder?) {
+        builder?.setAdapter(createListAdapter(), this)
+        builder?.setNegativeButton(context.getString(R.string.cancel)) { dialog, _ -> dialog.dismiss() }
         super.onPrepareDialogBuilder(builder)
     }
 

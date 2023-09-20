@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/day"
+        app:srcCompat="@drawable/day"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
@@ -47,7 +47,7 @@
             android:id="@+id/imageView3"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@color/theme_gravyDDD"
+            app:srcCompat="@color/theme_gravyDDD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView4"
             app:layout_constraintHorizontal_bias="0.5"
@@ -58,7 +58,7 @@
             android:id="@+id/imageView4"
             android:layout_width="55dp"
             android:layout_height="55dp"
-            android:src="@color/theme_gravyDDD"
+            app:srcCompat="@color/theme_gravyDDD"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

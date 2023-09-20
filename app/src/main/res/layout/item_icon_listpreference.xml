@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:layout_height="?attr/listPreferredItemHeight"
     android:padding="6dp">
 
     <ImageView
@@ -26,9 +26,9 @@
         android:ellipsize="marquee"
         android:gravity="center_vertical"
         android:maxLines="1"
-        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:minHeight="?attr/listPreferredItemHeight"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="?android:attr/textColorAlertDialogListItem"
+        android:textColor="?attr/textColorAlertDialogListItem"
         android:textIsSelectable="false"/>
 
 </RelativeLayout>

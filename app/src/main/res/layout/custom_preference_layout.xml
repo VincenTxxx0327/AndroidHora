@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:minHeight="?attr/listPreferredItemHeight"
     android:paddingRight="?android:attr/scrollbarSize">
 
     <RelativeLayout
@@ -21,7 +21,7 @@
             android:ellipsize="marquee"
             android:fadingEdge="horizontal"
             android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:textAppearance="?attr/textAppearanceListItem"
             android:textColor="@color/item_title" />
 
         <TextView

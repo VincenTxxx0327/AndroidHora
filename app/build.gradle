@@ -56,12 +56,6 @@ android {
 }
 
 dependencies {
-    // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    // ViewModel utilities for Compose
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
-    // LiveData
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -76,18 +70,20 @@ dependencies {
     implementation 'org.litepal.android:core:2.0.0'
     implementation 'com.just.agentweb:agentweb:4.0.2'
     implementation 'com.android.support:multidex:2.0.1'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+//    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     implementation 'com.tencent.bugly:crashreport_upgrade:1.6.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
     implementation 'com.squareup.leakcanary:leakcanary-android:2.11'
     implementation 'com.tencent.tinker:tinker-android-lib:1.9.14.16'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    //library-network
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    //End
     //view
     implementation 'com.cxz:swipeback:1.0.1'
     implementation 'com.github.clans:fab:1.6.4'
@@ -98,9 +94,7 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:commons:0.9.6.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
     implementation 'com.nineoldandroids:library:2.4.0'
-//com.wdullaer:materialdatetimepicker:3.6.4
-//me.jessyan:autosize:1.2.1
-    //
+
     implementation 'com.airbnb.android:lottie:6.0.0'
     implementation 'org.powermock:powermock-api-mockito2:2.0.9'
     implementation 'com.android.volley:volley:1.2.1'

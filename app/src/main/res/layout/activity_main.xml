@@ -41,7 +41,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:foreground="?attr/selectableItemBackground">
 
 
                 <ImageView
@@ -50,7 +50,7 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/main_moment"
-                    android:src="@drawable/selector_main_moment"
+                    app:srcCompat="@drawable/selector_main_moment"
                     app:layout_constraintBottom_toTopOf="@+id/tv_moment"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:foreground="?attr/selectableItemBackground">
 
                 <ImageView
                     android:id="@+id/iv_found"
@@ -83,7 +83,7 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/main_found"
-                    android:src="@drawable/selector_main_found"
+                    app:srcCompat="@drawable/selector_main_found"
                     app:layout_constraintBottom_toTopOf="@+id/tv_found"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -110,7 +110,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:foreground="?attr/selectableItemBackground">
 
                 <ImageView
                     android:id="@+id/iv_message"
@@ -118,7 +118,7 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/main_message"
-                    android:src="@drawable/selector_main_message"
+                    app:srcCompat="@drawable/selector_main_message"
                     app:layout_constraintBottom_toTopOf="@+id/tv_message"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -144,7 +144,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:foreground="?attr/selectableItemBackground">
 
                 <ImageView
                     android:id="@+id/iv_mine"
@@ -152,7 +152,7 @@
                     android:layout_height="32dp"
                     android:layout_gravity="center_horizontal"
                     android:contentDescription="@string/main_mine"
-                    android:src="@drawable/selector_main_mine"
+                    app:srcCompat="@drawable/selector_main_mine"
                     app:layout_constraintBottom_toTopOf="@+id/tv_mine"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"

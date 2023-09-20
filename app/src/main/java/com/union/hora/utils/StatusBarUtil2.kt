@@ -1,7 +1,7 @@
 package com.union.hora.utils
 
 import android.annotation.TargetApi
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.content.res.Resources
 import android.os.Build
@@ -45,7 +45,7 @@ class StatusBarUtil2 {
             }
 
         @JvmOverloads
-        fun immersive(activity: Activity, color: Int = DEFAULT_COLOR, @FloatRange(from = 0.0, to = 1.0) alpha: Float = DEFAULT_ALPHA) {
+        fun immersive(activity: AppCompatActivity, color: Int = DEFAULT_COLOR, @FloatRange(from = 0.0, to = 1.0) alpha: Float = DEFAULT_ALPHA) {
             immersive(activity.window, color, alpha)
         }
 
@@ -78,7 +78,7 @@ class StatusBarUtil2 {
 
         @TargetApi(Build.VERSION_CODES.M)
 //<editor-fold desc="DarkMode">
-        fun darkMode(activity: Activity, dark: Boolean) {
+        fun darkMode(activity: AppCompatActivity, dark: Boolean) {
             when {
                 isFlyme4Later -> darkModeForFlyme4(activity.window, dark)
                 isMIUI6Later -> darkModeForMIUI6(activity.window, dark)
@@ -87,11 +87,11 @@ class StatusBarUtil2 {
         }
 
         /** 设置状态栏darkMode,字体颜色及icon变黑(目前支持MIUI6以上,Flyme4以上,Android M以上)  */
-        fun darkMode(activity: Activity) {
+        fun darkMode(activity: AppCompatActivity) {
             darkMode(activity.window, DEFAULT_COLOR, DEFAULT_ALPHA)
         }
 
-        fun darkMode(activity: Activity, color: Int, @FloatRange(from = 0.0, to = 1.0) alpha: Float) {
+        fun darkMode(activity: AppCompatActivity, color: Int, @FloatRange(from = 0.0, to = 1.0) alpha: Float) {
             darkMode(activity.window, color, alpha)
         }
 

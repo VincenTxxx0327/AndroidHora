@@ -3,3 +3,4 @@ rootProject.name = "Hora"
 include ':library-base'
 include ':library-network'
 include ':library-video'
+include ':library-common'

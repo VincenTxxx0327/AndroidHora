@@ -14,7 +14,7 @@
         android:layout_width="55dp"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:src="@drawable/ic_toolbar_scan"
+        app:srcCompat="@drawable/ic_toolbar_scan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/iv_toolbarRight"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +38,7 @@
         android:layout_width="55dp"
         android:layout_height="match_parent"
         android:padding="16dp"
-        android:src="@drawable/ic_toolbar_setting"
+        app:srcCompat="@drawable/ic_toolbar_setting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

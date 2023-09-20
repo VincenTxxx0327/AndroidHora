@@ -1,7 +1,7 @@
 package com.union.hora.business.setting
 
-import android.app.Fragment
-import android.app.FragmentTransaction
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import android.content.Intent
 import android.os.Bundle
 import com.afollestad.materialdialogs.color.ColorChooserDialog

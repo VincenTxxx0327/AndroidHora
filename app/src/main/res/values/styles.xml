@@ -29,7 +29,7 @@
     <style name="MyTabLayoutStyle" parent="Base.Widget.Design.TabLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="background">@color/colorPrimary</item>
         <item name="tabIndicatorColor">@color/white</item>
         <item name="tabIndicatorHeight">@dimen/dp_1</item>
         <item name="tabSelectedTextColor">@color/white</item>
@@ -64,7 +64,7 @@
     </style>
 
     <style name="MenuLabelsStyle">
-        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="background">@drawable/fab_label_background</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:maxLines">2</item>
@@ -110,7 +110,7 @@
 
     <!--自定义的ActionBar样式-->
     <style name="Support.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
-        <item name="android:background">@android:color/transparent</item>
+        <item name="background">@android:color/transparent</item>
         <!-- Support library compatibility -->
         <item name="background">@android:color/transparent</item>
         <!--解决左边一直有一块边距的问题 contentInsetStart = 0 -->

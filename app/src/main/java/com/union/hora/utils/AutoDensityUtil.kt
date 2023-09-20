@@ -1,6 +1,6 @@
 package com.union.hora.utils
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.app.Application
 import android.content.ComponentCallbacks
 import android.content.res.Configuration
@@ -48,7 +48,7 @@ object AutoDensityUtil {
      * @param activity
      * @param application
      */
-    fun setCustomDensity(activity: Activity, application: Application) {
+    fun setCustomDensity(activity: AppCompatActivity, application: Application) {
         val appDisplayMetrics = application.resources.displayMetrics
         if (sNonCompatDensity == 0f) {
             sNonCompatDensity = appDisplayMetrics.density

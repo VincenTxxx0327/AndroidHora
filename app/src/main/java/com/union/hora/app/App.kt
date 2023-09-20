@@ -1,6 +1,7 @@
 package com.union.hora.app
 
 import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.app.Application
 import android.content.ContentProvider
 import android.content.ContentValues

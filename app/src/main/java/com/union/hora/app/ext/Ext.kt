@@ -1,6 +1,6 @@
 package com.union.hora.app.ext
 
-import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.util.Log
 import android.view.View
@@ -44,7 +44,7 @@ fun Context.showToast(content: String) {
     CustomToast(this, content).show()
 }
 
-fun Activity.showSnackMsg(msg: String) {
+fun AppCompatActivity.showSnackMsg(msg: String) {
     val snackbar = Snackbar.make(this.window.decorView, msg, Snackbar.LENGTH_SHORT)
     val view = snackbar.view
     view.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
@@ -81,7 +81,7 @@ inline fun <T : View> T.setSingleClickListener(time: Long = 1000, crossinline bl
  * getAgentWeb
  */
 fun String.getAgentWeb(
-    activity: Activity,
+    activity: AppCompatActivity,
     webContent: ViewGroup,
     layoutParams: ViewGroup.LayoutParams,
     webView: WebView,
