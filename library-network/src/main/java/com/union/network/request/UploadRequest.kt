@@ -4,7 +4,7 @@ package com.union.network.request
 import com.union.network.body.ProgressResponseCallback
 import com.union.network.request.base.BaseBodyRequest
 import com.union.network.request.base.ProgressRequestBody
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.ResponseBody

@@ -3,7 +3,7 @@ package com.union.network.callback
 import android.app.Dialog
 import com.union.network.callback.listener.IProgressDialog
 import com.union.network.exception.ApiException
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 /**
  * 可以自定义带有加载进度框的回调

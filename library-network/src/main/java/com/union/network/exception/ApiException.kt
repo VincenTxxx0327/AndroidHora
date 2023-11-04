@@ -24,11 +24,11 @@ import javax.net.ssl.SSLHandshakeException
 class ApiException(throwable: Throwable, code: Int) : Exception(throwable) {
     private val code: Int
     private var displayMessage: String? = null
-    override var message: String? = null
+    private var apiMessage: String? = null
 
     init {
         this.code = code
-        message = throwable.message
+        apiMessage = throwable.message
     }
 
     fun getCode(): Int {
@@ -43,12 +43,10 @@ class ApiException(throwable: Throwable, code: Int) : Exception(throwable) {
         displayMessage = "$msg(code:$code)"
     }
 
-    fun getMessage(): String? {
-        return message
+    fun getApiMessage(): String? {
+        return apiMessage
     }
-    /*public String getErrMessage() {
-        return message;
-    }*/
+
     /**
      * 约定异常
      */
@@ -148,68 +146,68 @@ class ApiException(throwable: Throwable, code: Int) : Exception(throwable) {
                                        ex.message = "网络错误,Code:"+httpException.code()+" ,err:"+httpException.getMessage();
                                        break;
                                }*/
-                    ex.message = e.message
+                    ex.apiMessage = e.message
                     ex
                 }
 
                 is ServerException -> {
                     val resultException: ServerException = e
                     ex = ApiException(resultException, resultException.getErrCode())
-                    ex.message = resultException.getMessage()
+                    ex.apiMessage = resultException.getApiMessage()
                     ex
                 }
 
                 is JsonParseException, is JSONException, is JsonSyntaxException, is JsonSerializer<*>, is NotSerializableException, is ParseException -> {
                     ex = ApiException(e, ERROR.PARSE_ERROR)
-                    ex.message = "解析错误"
+                    ex.apiMessage = "解析错误"
                     ex
                 }
 
                 is ClassCastException -> {
                     ex = ApiException(e, ERROR.CAST_ERROR)
-                    ex.message = "类型转换错误"
+                    ex.apiMessage = "类型转换错误"
                     ex
                 }
 
                 is ConnectException -> {
                     ex = ApiException(e, ERROR.NETWORD_ERROR)
-                    ex.message = "连接失败"
+                    ex.apiMessage = "连接失败"
                     ex
                 }
 
                 is SSLHandshakeException -> {
                     ex = ApiException(e, ERROR.SSL_ERROR)
-                    ex.message = "证书验证失败"
+                    ex.apiMessage = "证书验证失败"
                     ex
                 }
 
                 is ConnectTimeoutException -> {
                     ex = ApiException(e, ERROR.TIMEOUT_ERROR)
-                    ex.message = "连接超时"
+                    ex.apiMessage = "连接超时"
                     ex
                 }
 
                 is SocketTimeoutException -> {
                     ex = ApiException(e, ERROR.TIMEOUT_ERROR)
-                    ex.message = "连接超时"
+                    ex.apiMessage = "连接超时"
                     ex
                 }
 
                 is UnknownHostException -> {
                     ex = ApiException(e, ERROR.UNKNOWNHOST_ERROR)
-                    ex.message = "无法解析该域名"
+                    ex.apiMessage = "无法解析该域名"
                     ex
                 }
 
                 is NullPointerException -> {
                     ex = ApiException(e, ERROR.NULLPOINTER_EXCEPTION)
-                    ex.message = "NullPointerException"
+                    ex.apiMessage = "NullPointerException"
                     ex
                 }
 
                 else -> {
                     ex = ApiException(e, ERROR.UNKNOWN)
-                    ex.message = "未知错误"
+                    ex.apiMessage = "未知错误"
                     ex
                 }
             }

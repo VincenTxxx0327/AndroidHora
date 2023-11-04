@@ -1,7 +1,7 @@
 package com.union.network.interceptor
 
 import com.union.network.utils.HttpLog
-import com.union.network.utils.HttpUtil.UTF8
+import com.union.network.utils.UTF8
 import okhttp3.Interceptor
 import okhttp3.MediaType
 import okhttp3.Request

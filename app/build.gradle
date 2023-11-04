@@ -70,19 +70,19 @@ dependencies {
     implementation 'org.litepal.android:core:2.0.0'
     implementation 'com.just.agentweb:agentweb:4.0.2'
     implementation 'com.android.support:multidex:2.0.1'
-//    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     implementation 'com.tencent.bugly:crashreport_upgrade:1.6.1'
     implementation 'com.squareup.leakcanary:leakcanary-android:2.11'
     implementation 'com.tencent.tinker:tinker-android-lib:1.9.14.16'
-    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     //library-network
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     //End
     //view
     implementation 'com.cxz:swipeback:1.0.1'

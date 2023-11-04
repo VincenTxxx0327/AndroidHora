@@ -20,7 +20,7 @@ import com.union.network.request.GetRequest
 import com.union.network.request.PostRequest
 import com.union.network.request.PutRequest
 import com.union.network.utils.HttpLog
-import com.union.network.utils.RxUtil
+import com.union.network.utils.RxUtil.io_main
 import com.union.network.utils.Utils
 import io.reactivex.disposables.Disposable
 import okhttp3.Cache
@@ -122,7 +122,7 @@ class EasyHttp private constructor() {
     private var mCommonParams //全局公共请求参数
             : HttpParams? = null
     private val okHttpClientBuilder //okhttp请求的客户端
-            : OkHttpClient.Builder
+            : OkHttpClient.Builder = OkHttpClient.Builder()
     private val retrofitBuilder //Retrofit请求Builder
             : Retrofit.Builder
     private val rxCacheBuilder //RxCache请求的Builder
@@ -131,7 +131,6 @@ class EasyHttp private constructor() {
             : CookieManger? = null
 
     init {
-        okHttpClientBuilder = OkHttpClient.Builder()
         okHttpClientBuilder.hostnameVerifier(DefaultHostnameVerifier())
         okHttpClientBuilder.connectTimeout(DEFAULT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
         okHttpClientBuilder.readTimeout(DEFAULT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
@@ -281,7 +280,7 @@ class EasyHttp private constructor() {
      */
     fun setCacheTime(cacheTime: Long): EasyHttp {
         var retCacheTime = cacheTime
-        if (retCacheTime <= -1) retCacheTime = DEFAULT_CACHE_NEVER_EXPIRE.toLong()
+        if (retCacheTime <= -1) retCacheTime = DEFAULT_CACHE_NEVER_EXPIRE
         this.cacheTime = retCacheTime
         return this
     }
@@ -574,7 +573,7 @@ class EasyHttp private constructor() {
          */
         @SuppressLint("CheckResult")
         fun clearCache() {
-            rxCache.clear().compose(RxUtil.io_main<Boolean>())
+            rxCache.clear().compose(io_main<Boolean>())
                 .subscribe({ HttpLog.i("clearCache success!!!") }, { HttpLog.i("clearCache err!!!") })
         }
 
@@ -583,7 +582,7 @@ class EasyHttp private constructor() {
          */
         @SuppressLint("CheckResult")
         fun removeCache(key: String) {
-            rxCache.remove(key).compose(RxUtil.io_main<Boolean>())
+            rxCache.remove(key).compose(io_main<Boolean>())
                 .subscribe({ HttpLog.i("removeCache success!!!") }, { HttpLog.i("removeCache err!!!") })
         }
     }

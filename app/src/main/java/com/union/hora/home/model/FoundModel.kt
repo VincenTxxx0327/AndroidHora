@@ -5,7 +5,7 @@ import com.union.hora.home.contract.FoundContract
 import com.union.hora.http.CommonRetrofit
 import com.union.hora.http.bean.MomentResponseBody
 import com.union.hora.http.bean.CommonResponse
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 class FoundModel : CommonModel(), FoundContract.Model {
     override fun getSquareList(page: Int): Observable<CommonResponse<MomentResponseBody>> {

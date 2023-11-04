@@ -51,10 +51,10 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     def dagger_versions = "2.17"
 // Dagger core dependencies
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_versions"
+    kapt "com.google.dagger:dagger-compiler:$dagger_versions"
     implementation "com.google.dagger:dagger:$dagger_versions"
 // Dagger Android dependencies
-    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger_versions"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_versions"
     implementation "com.google.dagger:dagger-android:$dagger_versions"
     implementation "com.google.dagger:dagger-android-support:$dagger_versions"
 }

@@ -3,7 +3,7 @@ package com.union.network.request
 import com.union.common.utils.getAppComponent
 import com.union.network.callback.AbsCallback
 import com.union.network.request.base.BaseRequest
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import okhttp3.ResponseBody
 
 /**
@@ -15,11 +15,11 @@ class CustomRequest(url: String) : BaseRequest<CustomRequest>(url) {
 
     private var observable: Observable<ResponseBody>? = null
 
-    inline fun <reified R> create(): R {
+    inline fun <reified R> create(): R? {
         return create(R::class.java)
     }
 
-    fun <R> create(serviceClass: Class<R>): R {
+    fun <R> create(serviceClass: Class<R>): R? {
         return getAppComponent().repositoryManager()
             .obtainRetrofitService(serviceClass, retrofit)
     }

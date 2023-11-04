@@ -1,14 +1,28 @@
 package com.union.hora.app.rx.scheduler
 
-import io.reactivex.*
+import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.core.CompletableSource
+import io.reactivex.rxjava3.core.CompletableTransformer
+import io.reactivex.rxjava3.core.Flowable
+import io.reactivex.rxjava3.core.FlowableTransformer
+import io.reactivex.rxjava3.core.Maybe
+import io.reactivex.rxjava3.core.MaybeSource
+import io.reactivex.rxjava3.core.MaybeTransformer
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.ObservableSource
+import io.reactivex.rxjava3.core.ObservableTransformer
+import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.core.SingleSource
+import io.reactivex.rxjava3.core.SingleTransformer
 import org.reactivestreams.Publisher
 
 abstract class BaseScheduler<T> protected constructor(private val subscribeOnScheduler: Scheduler,
                                                       private val observeOnScheduler: Scheduler) : ObservableTransformer<T, T>,
-        SingleTransformer<T, T>,
-        MaybeTransformer<T, T>,
-        CompletableTransformer,
-        FlowableTransformer<T, T> {
+    SingleTransformer<T, T>,
+    MaybeTransformer<T, T>,
+    CompletableTransformer,
+    FlowableTransformer<T, T> {
 
     override fun apply(upstream: Completable): CompletableSource {
         return upstream.subscribeOn(subscribeOnScheduler)

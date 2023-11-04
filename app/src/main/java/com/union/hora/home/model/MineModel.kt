@@ -5,7 +5,7 @@ import com.union.hora.home.contract.MineContract
 import com.union.hora.http.CommonRetrofit
 import com.union.hora.http.bean.CommonResponse
 import com.union.hora.http.bean.ProjectTreeBean
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 class MineModel : BaseModel(), MineContract.Model {
 

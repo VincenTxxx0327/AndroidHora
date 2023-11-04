@@ -50,8 +50,8 @@ class SettingActivity : BaseSwipeBackActivity(), ColorChooserDialog.ColorCallbac
     }
 
     private fun setupFragment(fragmentName: String, args: Bundle) {
-        val fragment = Fragment.instantiate(this, fragmentName, args)
-        val transaction = fragmentManager.beginTransaction()
+        val fragment = supportFragmentManager.fragmentFactory.instantiate(classLoader, fragmentName)
+        val transaction = supportFragmentManager.beginTransaction()
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.replace(R.id.container, fragment)
         transaction.commitAllowingStateLoss()

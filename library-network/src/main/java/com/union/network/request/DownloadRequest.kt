@@ -1,14 +1,8 @@
 package com.union.network.request
 
-import com.union.network.callback.AbsCallback
 import com.union.network.callback.custom.FileCallback
-import com.union.network.func.RetryExceptionFunc
 import com.union.network.request.base.BaseRequest
-import com.union.network.subscriber.DownloadSubscriber
-import com.union.network.transformer.HandleErrTransformer
 import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.disposables.Disposable
-import io.reactivex.rxjava3.schedulers.Schedulers
 import okhttp3.ResponseBody
 
 /**

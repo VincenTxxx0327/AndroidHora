@@ -17,7 +17,7 @@ import com.union.hora.business.data.ContentActivity
 import com.union.hora.utils.CacheDataUtil
 import com.union.hora.widget.IconPreference
 import com.tencent.bugly.beta.Beta
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import org.greenrobot.eventbus.EventBus
 import java.util.concurrent.TimeUnit
 

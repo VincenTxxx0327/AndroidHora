@@ -30,7 +30,7 @@ class HttpHeaders : Serializable {
         }
     }
 
-    fun put(headers: Map<String?, String?>?) {
+    fun put(headers: Map<String, String?>?) {
         if (headers?.isNotEmpty() == true) {
             headersMap.putAll(escapeParams(headers))
         }

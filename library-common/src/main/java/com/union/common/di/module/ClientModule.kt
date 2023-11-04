@@ -24,6 +24,8 @@ import javax.inject.Singleton
  * @Author： VincenT
  * @Time： 2023/8/18 0:55
  */
+@Suppress("unused")
+@Module
 abstract class ClientModule {
 
     /**

@@ -1,6 +1,6 @@
 package com.union.hora.base
 
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.disposables.Disposable
 
 interface IModel {
 

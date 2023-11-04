@@ -51,4 +51,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
     implementation 'com.blankj:utilcode:1.30.7'
     implementation project(path: ':library-common')
+    implementation project(path: ':app')
 }

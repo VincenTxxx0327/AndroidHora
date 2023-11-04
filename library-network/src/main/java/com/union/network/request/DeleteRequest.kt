@@ -1,7 +1,7 @@
 package com.union.network.request
 
 import com.union.network.request.base.BaseBodyRequest
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody
 

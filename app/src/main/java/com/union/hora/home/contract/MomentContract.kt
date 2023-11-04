@@ -6,7 +6,7 @@ import com.union.hora.http.bean.Moment
 import com.union.hora.http.bean.Banner
 import com.union.hora.http.bean.Page
 import com.union.hora.http.bean.CommonResponse
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 interface MomentContract {
 

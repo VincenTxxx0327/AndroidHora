@@ -13,13 +13,13 @@ import java.nio.charset.Charset
  */
 val UTF8: Charset = Charset.forName("UTF-8")
 
-fun <V> escapeParams(map: Map<String?, V?>?): Map<String, V> {
+fun <V> escapeParams(map: Map<String, V?>?): Map<String, V> {
     if (map.isNullOrEmpty()) {
         return mapOf()
     }
     val hashMap: LinkedHashMap<String, V> = linkedMapOf()
     for ((key, value) in map) {
-        if (key != null && value != null) {
+        if (value != null) {
             hashMap[key] = value
         }
     }

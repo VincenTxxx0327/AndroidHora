@@ -5,7 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.union.network.model.ApiResult
 import com.union.network.utils.Utils
-import io.reactivex.functions.Function
+import io.reactivex.rxjava3.functions.Function
 import okhttp3.ResponseBody
 import org.json.JSONException
 import org.json.JSONObject

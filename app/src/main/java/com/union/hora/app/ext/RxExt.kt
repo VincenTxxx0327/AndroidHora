@@ -10,9 +10,9 @@ import com.union.hora.http.exception.ErrorStatus
 import com.union.hora.http.exception.ExceptionHandle
 import com.union.hora.http.function.RetryWithDelay
 import com.union.hora.utils.NetWorkUtil
-import io.reactivex.Observable
-import io.reactivex.Observer
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Observer
+import io.reactivex.rxjava3.disposables.Disposable
 
 fun <T : BaseResponse> Observable<T>.withSuccessOnly(
         model: IModel?,

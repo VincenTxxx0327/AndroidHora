@@ -4,7 +4,7 @@ import android.content.Context
 import com.union.network.exception.ApiException
 import com.union.network.utils.HttpLog
 import com.union.network.utils.NetworkUtil.isNetworkAvailable
-import io.reactivex.observers.DisposableObserver
+import io.reactivex.rxjava3.observers.DisposableObserver
 import java.lang.ref.WeakReference
 
 /**

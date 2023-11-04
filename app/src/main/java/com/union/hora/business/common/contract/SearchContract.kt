@@ -6,7 +6,7 @@ import com.union.hora.base.IView
 import com.union.hora.http.bean.HotSearchBean
 import com.union.hora.http.bean.CommonResponse
 import com.union.hora.http.bean.SearchHistoryBean
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 interface SearchContract {
 

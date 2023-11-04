@@ -3,7 +3,7 @@ package com.union.hora.business.data.contract
 import com.union.hora.base.CommonContract
 import com.union.hora.http.bean.MomentResponseBody
 import com.union.hora.http.bean.CommonResponse
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 interface SearchListContract {
 

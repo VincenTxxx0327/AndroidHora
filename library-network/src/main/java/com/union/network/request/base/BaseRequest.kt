@@ -1,6 +1,7 @@
 package com.union.network.request.base
 
 import android.annotation.SuppressLint
+import com.union.common.integration.obtainRetrofitService
 import com.union.common.utils.getAppComponent
 import com.union.network.EasyHttp
 import com.union.network.EasyHttp.Companion.getRetrofitBuilder
@@ -83,7 +84,7 @@ abstract class BaseRequest<R : BaseRequest<R>>(url: String) {
     internal var adapterFactories: MutableList<CallAdapter.Factory> = mutableListOf()
 
     internal var cache: Cache? = null
-    internal var cacheMode: CacheMode? = NO_CACHE               //默认无缓存
+    internal var cacheMode: CacheMode = NO_CACHE               //默认无缓存
     internal var cacheTime: Long? = -1L                         //缓存时间
     internal var cacheKey: String? = null                       //缓存Key
     internal var diskConverter: IDiskConverter? = null          //设置RxCache磁盘转换器
@@ -129,7 +130,7 @@ abstract class BaseRequest<R : BaseRequest<R>>(url: String) {
                 baseUrl = "${it.toUrl().protocol}://${it.toUrl().host}/"    //显示为 http://www.xxx.xxx 或 https://www.xxx.xxx
             }
         }
-        cacheMode = easyHttp?.mCacheMode                        //添加缓存模式
+        cacheMode = easyHttp?.mCacheMode ?: NO_CACHE            //添加缓存模式
         cacheTime = easyHttp?.cacheTime                         //缓存时间
         retryCount = easyHttp?.retryCount ?: 3                  //超时重试次数
         retryDelay = easyHttp?.retryDelay ?: 500                //超时重试延时

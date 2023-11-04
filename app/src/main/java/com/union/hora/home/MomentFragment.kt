@@ -24,7 +24,7 @@ import com.union.hora.http.bean.Banner
 import com.union.hora.http.bean.Moment
 import com.union.hora.utils.GlideUtil
 import com.union.hora.widget.decoration.GridViewItemDecoration
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import kotlinx.android.synthetic.main.fragment_refresh_layout.*
 import kotlinx.android.synthetic.main.item_common_banner.view.*
 import kotlinx.android.synthetic.main.toolbar_base.*

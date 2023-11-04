@@ -5,7 +5,7 @@ import com.union.hora.home.contract.MainContract
 import com.union.hora.http.CommonRetrofit
 import com.union.hora.http.bean.CommonResponse
 import com.union.hora.http.bean.UserInfoBody
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 class MainModel : BaseModel(), MainContract.Model {
 

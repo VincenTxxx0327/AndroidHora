@@ -7,8 +7,8 @@ import com.union.network.callback.AbsCallback
 import com.union.network.callback.ProgressCallback
 import com.union.network.exception.ApiException
 import com.union.network.utils.HttpLog
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -34,7 +34,7 @@ class DownloadSubscriber<ResponseBody : okhttp3.ResponseBody>(private val path: 
     }
 
     override fun onError(e: ApiException) {
-        HttpLog.d("DownSubscriber:>>>> onError:" + e.getMessage())
+        HttpLog.d("DownSubscriber:>>>> onError:" + e.getApiMessage())
         finalOnError(e)
     }
 

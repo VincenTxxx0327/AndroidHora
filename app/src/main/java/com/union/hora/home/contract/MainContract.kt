@@ -5,7 +5,7 @@ import com.union.hora.base.IPresenter
 import com.union.hora.base.IView
 import com.union.hora.http.bean.CommonResponse
 import com.union.hora.http.bean.UserInfoBody
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 interface MainContract {
 

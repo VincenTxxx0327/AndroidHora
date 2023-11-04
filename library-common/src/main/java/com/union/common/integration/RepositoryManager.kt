@@ -2,6 +2,7 @@ package com.union.common.integration
 
 import com.union.common.integration.cache.Cache
 import com.union.common.integration.cache.CacheType
+import dagger.Lazy
 import retrofit2.Retrofit
 import java.lang.reflect.Proxy
 import javax.inject.Inject
@@ -41,7 +42,7 @@ class RepositoryManager @Inject constructor() : IRepositoryManager {
     @Suppress("UNCHECKED_CAST")
     @Synchronized
     override fun <T> obtainRetrofitService(serviceClass: Class<T>, retrofit: Retrofit?): T? {
-        val oldRetrofit = this.retrofit?.value
+        val oldRetrofit = this.retrofit?.get()
         val newRetrofit = retrofit ?: oldRetrofit
         val canonicalName = serviceClass.canonicalName ?: ""
         var retrofitService: T? = null

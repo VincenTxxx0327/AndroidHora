@@ -1,7 +1,7 @@
 package com.union.hora.http.api
 
 import com.union.hora.http.bean.*
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.*
 
 interface ApiService {

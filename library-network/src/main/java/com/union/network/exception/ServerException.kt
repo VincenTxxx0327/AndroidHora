@@ -7,18 +7,18 @@ package com.union.network.exception
  */
 class ServerException(errCode: Int, msg: String) : RuntimeException(msg) {
     private val errCode: Int
-    override var message: String? = null
+    private var apiMessage: String? = null
 
     init {
         this.errCode = errCode
-        message = msg
+        apiMessage = msg
     }
 
     fun getErrCode(): Int {
         return errCode
     }
 
-    fun getMessage(): String {
-        return message ?: ""
+    fun getApiMessage(): String {
+        return apiMessage ?: ""
     }
 }

@@ -6,7 +6,7 @@ import com.union.hora.base.IView
 import com.union.hora.http.bean.CommonResponse
 import com.union.hora.http.bean.LoginData
 import com.union.hora.http.bean.UserIconBean
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 interface UserContract {
 

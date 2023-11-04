@@ -5,8 +5,6 @@ import com.union.network.cache.model.CacheResult
 import com.union.network.callback.CacheResultCallback
 import com.union.network.exception.ApiException
 import com.union.network.request.base.BaseRequest
-import com.union.network.utils.HttpLog
-import io.reactivex.rxjava3.disposables.Disposable
 
 /**
  *

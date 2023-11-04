@@ -26,12 +26,6 @@ class HttpParams : Serializable {
      */
     val fileParamsMap: LinkedHashMap<String, MutableList<FileWrapper<*>>> = linkedMapOf()
 
-    fun put(params: Map<String?, String?>?) {
-        if (params?.isNotEmpty() == true) {
-            urlParamsMap.putAll(escapeParams(params))
-        }
-    }
-
     fun put(params: HttpParams?) {
         if (params != null) {
             if (params.urlParamsMap.isNotEmpty()) {
@@ -43,9 +37,9 @@ class HttpParams : Serializable {
         }
     }
 
-    fun put(params: Map<String, String>?) {
+    fun put(params: Map<String, String?>?) {
         if (params.isNullOrEmpty()) return
-        urlParamsMap.putAll(params)
+        urlParamsMap.putAll(escapeParams(params))
     }
 
     fun put(key: String, value: String) {
