@@ -22,7 +22,7 @@ import com.union.network.request.PutRequest
 import com.union.network.utils.HttpLog
 import com.union.network.utils.RxUtil.io_main
 import com.union.network.utils.Utils
-import io.reactivex.disposables.Disposable
+import io.reactivex.rxjava3.disposables.Disposable
 import okhttp3.Cache
 import okhttp3.ConnectionPool
 import okhttp3.Interceptor
@@ -30,7 +30,7 @@ import okhttp3.OkHttpClient
 import retrofit2.CallAdapter
 import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import java.io.File
 import java.io.InputStream
 import java.net.Proxy
@@ -136,7 +136,7 @@ class EasyHttp private constructor() {
         okHttpClientBuilder.readTimeout(DEFAULT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
         okHttpClientBuilder.writeTimeout(DEFAULT_MILLISECONDS.toLong(), TimeUnit.MILLISECONDS)
         retrofitBuilder = Retrofit.Builder()
-        retrofitBuilder.addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //增加RxJava2CallAdapterFactory
+        retrofitBuilder.addCallAdapterFactory(RxJava3CallAdapterFactory.create()) //增加RxJava2CallAdapterFactory
         rxCacheBuilder = RxCache.Builder().init(sContext)
             .diskConverter(SerializableDiskConverter()) //目前只支持Serializable和Gson缓存其它可以自己扩展
     }

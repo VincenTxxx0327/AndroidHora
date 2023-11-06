@@ -15,7 +15,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 
@@ -32,7 +32,7 @@ object CommonRetrofit {
                 .client(getOkHttpClient())
                 .addConverterFactory(CommonGsonFactory.create())
 //                .addConverterFactory(MoshiConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build()
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create()).build()
         }
         return retrofit
     }
