@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hora">
+        <service android:name=".home.other.MusicFloatingService" />
+        <service android:name=".home.other.ExampleFloatingService" />
+        <activity
+            android:name=".business.music.MusicPlayerActivity"
+            android:exported="false" />
 
         <activity
             android:name=".home.MainActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
 
         <meta-data
             android:name="design_width_in_dp"
@@ -54,7 +59,6 @@
             android:theme="@android:style/Theme.Translucent" />
 
         <receiver android:name=".app.receiver.NetworkChangeReceiver" />
-
     </application>
 
 </manifest>

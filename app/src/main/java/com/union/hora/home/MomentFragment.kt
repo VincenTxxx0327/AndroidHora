@@ -5,12 +5,9 @@ import android.content.Intent
 import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import androidx.recyclerview.widget.RecyclerView
 import cn.bingoogolapple.bgabanner.BGABanner
 import cn.bingoogolapple.bgabanner.transformer.TransitionEffect
-import com.chad.library.adapter.base.BaseQuickAdapter.Companion.HEADER_VIEW
 import com.union.hora.R
 import com.union.hora.adapter.HomeAdapter
 import com.union.hora.app.ext.setNewOrAddData
@@ -24,6 +21,7 @@ import com.union.hora.http.bean.Banner
 import com.union.hora.http.bean.Moment
 import com.union.hora.utils.GlideUtil
 import com.union.hora.widget.decoration.GridViewItemDecoration
+import com.union.hora.widget.manager.FullyStaggeredGridLayoutManager
 import io.reactivex.rxjava3.core.Observable
 import kotlinx.android.synthetic.main.fragment_refresh_layout.*
 import kotlinx.android.synthetic.main.item_common_banner.view.*
@@ -42,8 +40,8 @@ class MomentFragment : BaseMvpFragment<MomentContract.View, MomentContract.Prese
     private val homeAdapter: HomeAdapter by lazy {
         HomeAdapter()
     }
-    private val gridLayoutManager: GridLayoutManager by lazy {
-        GridLayoutManager(activity, 2, RecyclerView.VERTICAL, false)
+    private val gridLayoutManager: FullyStaggeredGridLayoutManager by lazy {
+        FullyStaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
     }
 
     private val bannerAdapter: BGABanner.Adapter<ImageView, String> by lazy {
@@ -103,9 +101,6 @@ class MomentFragment : BaseMvpFragment<MomentContract.View, MomentContract.Prese
                 lazyLoad()
             }
         }
-        gridLayoutManager.spanSizeLookup = object : SpanSizeLookup() {
-            override fun getSpanSize(position: Int): Int = if (homeAdapter.getItemViewType(position) == HEADER_VIEW) 2 else 1
-        }
         homeAdapter.run {
             setOnItemClickListener { adapter, _, position ->
                 val item = adapter.data[position] as Moment
@@ -148,7 +143,7 @@ class MomentFragment : BaseMvpFragment<MomentContract.View, MomentContract.Prese
 
     override fun scrollToTop() {
         rv_mine_extra.run {
-            if (gridLayoutManager.findFirstVisibleItemPosition() > 20) {
+            if (gridLayoutManager.findLastCompletelyVisibleItemPositions(IntArray(20)).lastIndex != -1) {
                 scrollToPosition(0)
             } else {
                 smoothScrollToPosition(0)

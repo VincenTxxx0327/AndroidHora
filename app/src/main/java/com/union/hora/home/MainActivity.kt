@@ -1,20 +1,25 @@
 package com.union.hora.home
 
-import android.annotation.SuppressLint
+import android.app.Service
+import android.content.Context
+import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.view.GestureDetector
-import android.view.GestureDetector.OnGestureListener
+import android.provider.Settings
 import android.view.KeyEvent
-import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnClickListener
 import androidx.fragment.app.FragmentTransaction
-import com.tencent.bugly.beta.Beta
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.union.hora.R
 import com.union.hora.app.ext.showToast
 import com.union.hora.base.BaseMvpActivity
+import com.union.hora.business.music.MusicPlayerActivity
 import com.union.hora.home.contract.MainContract
+import com.union.hora.home.other.MusicFloatingService
 import com.union.hora.home.presenter.MainPresenter
 import com.union.hora.utils.Preference
 import kotlinx.android.synthetic.main.activity_main.*
@@ -63,6 +68,7 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
     override fun initData() {
 //        Beta.checkUpgrade(false, false)
 //        mPresenter?.loadUserInfo()
+//        mPresenter?.loadFloatingView()
     }
 
     override fun initListener() {
@@ -70,6 +76,7 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
         cl_found.setOnClickListener(this)
         cl_message.setOnClickListener(this)
         cl_mine.setOnClickListener(this)
+        nav_music_player.setOnClickListener(this)
     }
 
     private fun setCurrentViewIndex(index: Int, initData: Boolean) {
@@ -157,6 +164,14 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
         }
     }
 
+    override fun showFloatingView() {
+        if (MusicFloatingService.isStart) {
+            LocalBroadcastManager.getInstance(this).sendBroadcast(Intent(MusicFloatingService.ACTION_SHOW_FLOATING))
+        } else {
+            startService(Intent(this, MusicFloatingService::class.java))
+        }
+    }
+
     override fun recreate() {
         try {
             val fragmentTransaction = supportFragmentManager.beginTransaction()
@@ -208,6 +223,30 @@ class MainActivity : BaseMvpActivity<MainContract.View, MainContract.Presenter>(
             R.id.cl_found -> setCurrentViewIndex(FRAGMENT_FOUND, false)
             R.id.cl_message -> setCurrentViewIndex(FRAGMENT_MESSAGE, false)
             R.id.cl_mine -> setCurrentViewIndex(FRAGMENT_MINE, false)
+            R.id.nav_music_player -> startActivity(Intent(this, MusicPlayerActivity::class.java))
+        }
+    }
+
+     fun canDrawOverlays(context: Context, isApplyAuthorization:Boolean):Boolean {
+        //Android 6.0 以下无需申请权限
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            //判断是否拥有悬浮窗权限，无则跳转悬浮窗权限授权页面
+            return if (Settings.canDrawOverlays(context)) {
+                true
+            } else {
+                if (isApplyAuthorization) {
+                    val intent =  Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + context.packageName))
+                    if (context is Service) {
+                        intent.flags = FLAG_ACTIVITY_NEW_TASK
+                    }
+                    context.startActivity(intent)
+                    false
+                } else {
+                    false
+                }
+            }
+        } else {
+            return true
         }
     }
 
