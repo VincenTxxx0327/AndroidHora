@@ -32,14 +32,14 @@ interface ApiService {
 
     @POST("login")
     @FormUrlEncoded
-    fun loginMember(@Field("username") username: String,
+    fun loginMember(@Field("userName") username: String,
                     @Field("password") password: String): Observable<CommonResponse<LoginData>>
 
     @POST("register")
     @FormUrlEncoded
-    fun registerMember(@Field("username") username: String,
+    fun registerMember(@Field("userName") username: String,
                        @Field("password") password: String,
-                       @Field("role_ids") role_ids: String): Observable<CommonResponse<LoginData>>
+                       @Field("roleIds") role_ids: String): Observable<CommonResponse<LoginData>>
 
     @GET("user/logout/json")
     fun logout(): Observable<CommonResponse<Any>>

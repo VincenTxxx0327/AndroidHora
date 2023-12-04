@@ -1,5 +1,6 @@
 package com.union.hora.home
 
+import android.content.Intent
 import android.view.View
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
@@ -9,6 +10,7 @@ import com.union.hora.adapter.MineExtraAdapter
 import com.union.hora.adapter.MineUsefulAdapter
 import com.union.hora.app.ext.showToast
 import com.union.hora.base.BaseMvpFragment
+import com.union.hora.business.user.UserActivity
 import com.union.hora.business.user.repossitory.UserRepository
 import com.union.hora.home.contract.MineContract
 import com.union.hora.home.presenter.MinePresenter
@@ -59,6 +61,9 @@ class MineFragment : BaseMvpFragment<MineContract.View, MineContract.Presenter>(
     }
 
     override fun initListener(view: View) {
+        btn_mine_login.setOnClickListener {
+            startActivity(Intent(activity, UserActivity::class.java))
+        }
         mineUsefulAdapter.run {
             setOnItemClickListener { adapter, _, position ->
                 val item = adapter.data[position] as UserIconBean

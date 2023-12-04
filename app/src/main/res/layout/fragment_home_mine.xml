@@ -58,6 +58,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <Button
+                        android:id="@+id/btn_mine_login"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:background="@drawable/selector_btn_normal"
