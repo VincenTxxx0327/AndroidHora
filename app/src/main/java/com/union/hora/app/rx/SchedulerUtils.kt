@@ -4,7 +4,7 @@ import com.union.hora.app.rx.scheduler.IoMainScheduler
 
 object SchedulerUtils {
 
-    fun <T> ioToMain(): IoMainScheduler<T> {
+    fun <T : Any> ioToMain(): IoMainScheduler<T> {
         return IoMainScheduler()
     }
 

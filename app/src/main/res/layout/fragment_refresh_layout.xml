@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.union.hora.widget.MultipleStatusView
+    <com.widget.MultipleStatusView
         android:id="@+id/msv_statusView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -48,5 +48,5 @@
                     tools:spanCount="2" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-    </com.union.hora.widget.MultipleStatusView>
+    </com.widget.MultipleStatusView>
 </androidx.constraintlayout.widget.ConstraintLayout>

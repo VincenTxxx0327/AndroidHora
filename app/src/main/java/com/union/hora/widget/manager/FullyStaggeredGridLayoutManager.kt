@@ -1,4 +1,4 @@
-package com.union.hora.widget.manager
+package com.widget.manager
 
 import android.content.Context
 import android.graphics.Rect

@@ -20,7 +20,7 @@ import com.union.hora.http.bean.HotSearchBean
 import com.union.hora.http.bean.SearchHistoryBean
 import com.union.hora.utils.CommonUtil
 import com.union.hora.utils.DisplayManager
-import com.union.hora.widget.decoration.RecyclerViewItemDecoration
+import com.widget.decoration.RecyclerViewItemDecoration
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 import kotlinx.android.synthetic.main.activity_search.*

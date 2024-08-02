@@ -25,7 +25,7 @@ import com.union.hora.business.data.contract.ContentContract
 import com.union.hora.business.data.presenter.ContentPresenter
 import com.union.hora.business.user.UserActivity
 import com.union.hora.webclient.WebClientFactory
-import com.union.hora.widget.NestedScrollAgentWebView
+import com.widget.NestedScrollAgentWebView
 import kotlinx.android.synthetic.main.activity_content.*
 import kotlinx.android.synthetic.main.toolbar.*
 

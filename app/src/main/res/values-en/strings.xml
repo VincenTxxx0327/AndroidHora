@@ -1,191 +1,868 @@
 <resources>
-    <string name="app_name">Hora</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="home">Home</string>
-    <string name="knowledge_system">System</string>
-    <string name="navigation">Navigation</string>
-    <string name="project">Project</string>
-    <string name="wechat">WeChat</string>
+    <!--    <string name="app_name">Hora</string>-->
+    <!--    <string name="navigation_drawer_open">Open navigation drawer</string>-->
+    <!--    <string name="navigation_drawer_close">Close navigation drawer</string>-->
+    <!--    <string name="home">Home</string>-->
+    <!--    <string name="knowledge_system">System</string>-->
+    <!--    <string name="navigation">Navigation</string>-->
+    <!--    <string name="project">Project</string>-->
+    <!--    <string name="wechat">WeChat</string>-->
 
-    <string name="exit_tip">Press again to exit the Hora</string>
-    <string name="share_article_url">%1$sShare【%2$s】：%3$s</string>
+    <!--    <string name="exit_tip">Press again to exit the Hora</string>-->
+    <!--    <string name="share_article_url">%1$sShare【%2$s】：%3$s</string>-->
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
-    <string name="no_data">No Data</string>
-    <string name="no_network">Network Anomaly</string>
-    <string name="no_network_tip">Please check the network and click reload</string>
-    <string name="data_error">Data acquisition failed</string>
-    <string name="network_unavailable_tip">Network connection is not available, please check the network settings!</string>
+    <!--    <string name="no_data">No Data</string>-->
+    <!--    <string name="no_network">Network Anomaly</string>-->
+    <!--    <string name="no_network_tip">Please check the network and click reload</string>-->
+    <!--    <string name="data_error">Data acquisition failed</string>-->
+    <!--    <string name="network_unavailable_tip">Network connection is not available, please check the network settings!</string>-->
+    <!--    <string name="loading">loading...</string>-->
 
-    <!-- Menu Action -->
-    <string name="action_search">Search</string>
-    <string name="action_share">Share</string>
-    <string name="action_like">Like</string>
-    <string name="action_browser">Browser</string>
+    <!--    &lt;!&ndash; Menu Action &ndash;&gt;-->
+    <!--    <string name="action_search">Search</string>-->
+    <!--    <string name="action_share">Share</string>-->
+    <!--    <string name="action_like">Like</string>-->
+    <!--    <string name="action_browser">Browser</string>-->
 
-    <!-- Nav Action -->
-    <string name="nav_my_collect">My Collect</string>
-    <string name="nav_setting">Setting</string>
-    <string name="nav_about_us">About Us</string>
-    <string name="nav_logout">Logout</string>
-    <string name="nav_night_mode">Night Mode</string>
-    <string name="nav_todo">TODO</string>
-    <string name="nav_my_score">My Score</string>
-    <string name="nav_id">ID:</string>
-    <string name="nav_grade">Grade:</string>
-    <string name="nav_rank">Rank:</string>
+    <!--    &lt;!&ndash; Nav Action &ndash;&gt;-->
+    <!--    <string name="nav_my_collect">My Collect</string>-->
+    <!--    <string name="nav_setting">Setting</string>-->
+    <!--    <string name="nav_about_us">About Us</string>-->
+    <!--    <string name="nav_logout">Logout</string>-->
+    <!--    <string name="nav_night_mode">Night Mode</string>-->
+    <!--    <string name="nav_todo">TODO</string>-->
+    <!--    <string name="nav_my_score">My Score</string>-->
+    <!--    <string name="nav_id">ID:</string>-->
+    <!--    <string name="nav_grade">Grade:</string>-->
+    <!--    <string name="nav_rank">Rank:</string>-->
 
-    <string name="score">Score</string>
-    <string name="score_detail">Score Detail</string>
-    <string name="help_label">Help</string>
-    <string name="score_list">Score List</string>
+    <!--    <string name="score">Score</string>-->
+    <!--    <string name="score_detail">Score Detail</string>-->
+    <!--    <string name="help_label">Help</string>-->
+    <!--    <string name="score_list">Score List</string>-->
 
-    <!-- Login -->
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="go_login">Go Login</string>
-    <string name="login">Login</string>
-    <string name="register">Register</string>
-    <string name="no_account">No account yet? Create one</string>
-    <string name="username_not_empty">Username cannot be empty.</string>
-    <string name="password_not_empty">Password cannot be empty.</string>
-    <string name="have_account">Already have a account? Login</string>
-    <string name="enter_password_again">Enter Password Again</string>
-    <string name="confirm_password_not_empty">Confirm Password cannot be empty.</string>
-    <string name="password_cannot_match">Password cannot match</string>
-    <string name="login_success">Login Success</string>
-    <string name="login_fail">Login Fail</string>
-    <string name="register_success">Register Success</string>
-    <string name="register_fail">Register Fail</string>
-    <string name="confirm_logout">Confirm Logout？</string>
-    <string name="logout_success">Logout Success</string>
-    <string name="logout_ing">Logout...</string>
-    <string name="login_tint">Please Login</string>
-    <string name="login_ing">Login...</string>
-    <string name="register_ing">Register...</string>
-    <string name="user_login">User Login</string>
-    <string name="login_tip">Please login using Hora account!</string>
-    <string name="user_register">Register User</string>
-    <string name="register_tip">Users can log in after they register!</string>
+    <!--    &lt;!&ndash; Login &ndash;&gt;-->
+    <!--&lt;!&ndash;    <string name="username">Username</string>&ndash;&gt;-->
+    <!--&lt;!&ndash;    <string name="password">Password</string>&ndash;&gt;-->
+    <!--    <string name="go_login">Go Login</string>-->
+    <!--    <string name="login">Login</string>-->
+    <!--    <string name="register">Register</string>-->
+    <!--    <string name="no_account">No account yet? Create one</string>-->
+    <!--    <string name="username_not_empty">Username cannot be empty.</string>-->
+    <!--    <string name="password_not_empty">Password cannot be empty.</string>-->
+    <!--    <string name="have_account">Already have a account? Login</string>-->
+    <!--    <string name="enter_password_again">Enter Password Again</string>-->
+    <!--    <string name="confirm_password_not_empty">Confirm Password cannot be empty.</string>-->
+    <!--    <string name="password_cannot_match">Password cannot match</string>-->
+    <!--    <string name="login_success">Login Success</string>-->
+    <!--    <string name="login_fail">Login Fail</string>-->
+    <!--    <string name="register_success">Register Success</string>-->
+    <!--    <string name="register_fail">Register Fail</string>-->
+    <!--    <string name="confirm_logout">Confirm Logout？</string>-->
+    <!--    <string name="logout_success">Logout Success</string>-->
+    <!--    <string name="logout_ing">Logout...</string>-->
+    <!--    <string name="login_tint">Please Login</string>-->
+    <!--    <string name="login_ing">Login...</string>-->
+    <!--    <string name="register_ing">Register...</string>-->
+    <!--    <string name="user_login">User Login</string>-->
+    <!--    <string name="login_tip">Please login using Hora account!</string>-->
+    <!--    <string name="user_register">Register User</string>-->
+    <!--    <string name="register_tip">Users can log in after they register!</string>-->
 
-    <!-- Home -->
-    <string name="collect_success">Collect Success</string>
-    <string name="cancel_collect_success">Cancel Collect Success</string>
-    <string name="new_fresh">New</string>
-    <string name="top_tip">Top</string>
+    <!--    &lt;!&ndash; Home &ndash;&gt;-->
+    <!--    <string name="collect_success">Collect Success</string>-->
+    <!--    <string name="cancel_collect_success">Cancel Collect Success</string>-->
+    <!--    <string name="new_fresh">New</string>-->
+    <!--    <string name="top_tip">Top</string>-->
 
-    <!-- Collect -->
-    <string name="collect">Collect</string>
-    <string name="anonymous">anonymous</string>
+    <!--    &lt;!&ndash; Collect &ndash;&gt;-->
+    <!--    <string name="collect">Collect</string>-->
+    <!--    <string name="anonymous">anonymous</string>-->
 
-    <!-- Search -->
-    <string name="search_tint">Find more dry goods</string>
-    <string name="hot_search">Hot Search</string>
-    <string name="clear_all">Clear all</string>
-    <string name="history_search">Search History</string>
-    <string name="search_null_tint">Find some dry goods</string>
+    <!--    &lt;!&ndash; Search &ndash;&gt;-->
+    <!--    <string name="search_tint">Find more dry goods</string>-->
+    <!--    <string name="hot_search">Hot Search</string>-->
+    <!--    <string name="clear_all">Clear all</string>-->
+    <!--    <string name="history_search">Search History</string>-->
+    <!--    <string name="search_null_tint">Find some dry goods</string>-->
 
-    <!-- AboutUs -->
-    <string name="about_us">About US</string>
-    <string name="changelog">Update Log</string>
-    <string name="changelog_url">https://github.com/iceCola7/WanAndroid/releases</string>
-    <string name="about_developers_label">Main Developer</string>
-    <string name="about_developers">https://github.com/bjchexz</string>
-    <string name="source_code">Source Code</string>
-    <string name="source_code_url">https://github.com/iceCola7/WanAndroid</string>
-    <string name="about_libraries_label">Open Source License</string>
-    <string name="about_libraries_summary">View open source license information</string>
-    <string name="copyright">Copyright declaration</string>
-    <string name="copyright_summary">Only for personal and non commercial purposes</string>
-    <string name="version">Version</string>
-    <string name="current_version">Current Version&#160;</string>
-    <string name="official_website">Official Website</string>
-    <string name="official_website_url">https://www.wanandroid.com</string>
+    <!--    &lt;!&ndash; AboutUs &ndash;&gt;-->
+    <!--    <string name="about_us">About US</string>-->
+    <!--    <string name="changelog">Update Log</string>-->
+    <!--    <string name="changelog_url">https://github.com/iceCola7/WanAndroid/releases</string>-->
+    <!--    <string name="about_developers_label">Main Developer</string>-->
+    <!--    <string name="about_developers">https://github.com/bjchexz</string>-->
+    <!--    <string name="source_code">Source Code</string>-->
+    <!--    <string name="source_code_url">https://github.com/iceCola7/WanAndroid</string>-->
+    <!--    <string name="about_libraries_label">Open Source License</string>-->
+    <!--    <string name="about_libraries_summary">View open source license information</string>-->
+    <!--    <string name="copyright">Copyright declaration</string>-->
+    <!--    <string name="copyright_summary">Only for personal and non commercial purposes</string>-->
+    <!--    <string name="version">Version</string>-->
+    <!--    <string name="current_version">Current Version&#160;</string>-->
+    <!--    <string name="official_website">Official Website</string>-->
+    <!--    <string name="official_website_url">https://www.wanandroid.com</string>-->
 
-    <!-- Setting -->
-    <string name="setting">Setting</string>
-    <string name="basic_setting">Base Setting</string>
-    <string name="switch_photo_mode">Without Image Mode</string>
-    <string name="switch_no_photo_mode_summary">Unload pictures in non Wifi environment after opening</string>
-    <string name="switch_show_top_summary">Top articles will not be displayed after opening</string>
-    <string name="switch_show_top_title">Whether to display home top articles</string>
-    <string name="switch_night_mode">Night Mode</string>
-    <string name="switch_night_mode_summary">Switch Night Mode</string>
-    <string name="clear_cache">Clear Cache</string>
-    <string name="clear_cache_successfully">Clear Success</string>
-    <string name="other_setting">Other Setting</string>
-    <string name="about_settings">About</string>
-    <string name="choose_theme_color">Theme Color</string>
-    <string name="choose_theme_color_summary">Custom theme color</string>
-    <string name="back">Back</string>
-    <string name="done">Done</string>
-    <string name="custom">Custom</string>
-    <string name="nav_bar_coloration">Navigation bar coloring</string>
-    <string name="nav_bar_coloration_summary">Navigation bar color follow subject color</string>
-    <string name="choose_icon">Change Icon</string>
-    <string name="choose_icon_summary">Reboot App to take effect</string>
-    <string name="slidable_title">Sliding Back</string>
-    <string name="slidable_summary">Like iOS left slide back</string>
-    <string name="auto_night_mode">Auto Switch Night Mode</string>
-    <string name="auto_night_mode_summary">Setting the time to switch</string>
-    <string name="auto_night_mode_subsummary">Reboot App to take effect</string>
-    <string name="auto_night_category">Time</string>
-    <string name="auto_night_start">Night Mode Start Time</string>
-    <string name="auto_day_start">Day Mode Start Time</string>
-    <string name="check_version_fail">Failed to check new version. Please try again later.</string>
-    <string name="check_version_ing">Checking, please wait.</string>
-    <string name="check_no_version">This is the latest version.</string>
-    <string name="scan_code_download">Scan code download</string>
-    <string name="scan_share_tip">If it is easy to use, please recommend it to your friends</string>
-    <string name="scan_code_tip">If it is easy to use, please recommend it to your friends\n (It is recommended to use the browser to scan the QR code ^_^ )</string>
+    <!--    &lt;!&ndash; Setting &ndash;&gt;-->
+    <!--    <string name="setting">Setting</string>-->
+    <!--    <string name="basic_setting">Base Setting</string>-->
+    <!--    <string name="switch_photo_mode">Without Image Mode</string>-->
+    <!--    <string name="switch_no_photo_mode_summary">Unload pictures in non Wifi environment after opening</string>-->
+    <!--    <string name="switch_show_top_summary">Top articles will not be displayed after opening</string>-->
+    <!--    <string name="switch_show_top_title">Whether to display home top articles</string>-->
+    <!--    <string name="switch_night_mode">Night Mode</string>-->
+    <!--    <string name="switch_night_mode_summary">Switch Night Mode</string>-->
+    <!--    <string name="clear_cache">Clear Cache</string>-->
+    <!--    <string name="clear_cache_successfully">Clear Success</string>-->
+    <!--    <string name="other_setting">Other Setting</string>-->
+    <!--    <string name="about_settings">About</string>-->
+    <!--    <string name="choose_theme_color">Theme Color</string>-->
+    <!--    <string name="choose_theme_color_summary">Custom theme color</string>-->
+    <!--    <string name="back">Back</string>-->
+    <!--    <string name="done">Done</string>-->
+    <!--    <string name="custom">Custom</string>-->
+    <!--    <string name="nav_bar_coloration">Navigation bar coloring</string>-->
+    <!--    <string name="nav_bar_coloration_summary">Navigation bar color follow subject color</string>-->
+    <!--    <string name="choose_icon">Change Icon</string>-->
+    <!--    <string name="choose_icon_summary">Reboot App to take effect</string>-->
+    <!--    <string name="slidable_title">Sliding Back</string>-->
+    <!--    <string name="slidable_summary">Like iOS left slide back</string>-->
+    <!--    <string name="auto_night_mode">Auto Switch Night Mode</string>-->
+    <!--    <string name="auto_night_mode_summary">Setting the time to switch</string>-->
+    <!--    <string name="auto_night_mode_subsummary">Reboot App to take effect</string>-->
+    <!--    <string name="auto_night_category">Time</string>-->
+    <!--    <string name="auto_night_start">Night Mode Start Time</string>-->
+    <!--    <string name="auto_day_start">Day Mode Start Time</string>-->
+    <!--    <string name="check_version_fail">Failed to check new version. Please try again later.</string>-->
+    <!--    <string name="check_version_ing">Checking, please wait.</string>-->
+    <!--    <string name="check_no_version">This is the latest version.</string>-->
+    <!--    <string name="scan_code_download">Scan code download</string>-->
+    <!--    <string name="scan_share_tip">If it is easy to use, please recommend it to your friends</string>-->
+    <!--    <string name="scan_code_tip">If it is easy to use, please recommend it to your friends\n (It is recommended to use the browser to scan the QR code ^_^ )</string>-->
 
-    <!-- TODO工具 -->
-    <string name="delete_success">Delete Success</string>
-    <string name="delete">Delete</string>
-    <string name="mark_done">Marked as completed</string>
-    <string name="restore">Restore</string>
-    <string name="completed">Completed</string>
-    <string name="confirm_delete">Confirm Delete</string>
-    <string name="add">Add</string>
-    <string name="notodo">Todo</string>
-    <string name="save">Save</string>
-    <string name="non_compulsory">Non Compulsory</string>
-    <string name="details">Details：</string>
-    <string name="compulsory">Compulsory</string>
-    <string name="title">Title：</string>
-    <string name="date">Date：</string>
-    <string name="title_tip">title is not empty!</string>
-    <string name="save_success">Save Success</string>
-    <string name="edit">Edit</string>
-    <string name="see">See</string>
-    <string name="save_ing"> Save...</string>
-    <string name="switch_label">Switch</string>
-    <string name="priority_0">common</string>
-    <string name="priority_1">important</string>
+    <!--    &lt;!&ndash; TODO工具 &ndash;&gt;-->
+    <!--    <string name="delete_success">Delete Success</string>-->
+    <!--    <string name="delete">Delete</string>-->
+    <!--    <string name="mark_done">Marked as completed</string>-->
+    <!--    <string name="restore">Restore</string>-->
+    <!--    <string name="completed">Completed</string>-->
+    <!--    <string name="confirm_delete">Confirm Delete</string>-->
+    <!--    <string name="add">Add</string>-->
+    <!--    <string name="notodo">Todo</string>-->
+    <!--    <string name="save">Save</string>-->
+    <!--    <string name="non_compulsory">Non Compulsory</string>-->
+    <!--    <string name="details">Details：</string>-->
+    <!--    <string name="compulsory">Compulsory</string>-->
+    <!--    <string name="title">Title：</string>-->
+    <!--    <string name="date">Date：</string>-->
+    <!--    <string name="title_tip">title is not empty!</string>-->
+    <!--    <string name="save_success">Save Success</string>-->
+    <!--    <string name="edit">Edit</string>-->
+    <!--    <string name="see">See</string>-->
+    <!--    <string name="save_ing"> Save...</string>-->
+    <!--    <string name="switch_label">Switch</string>-->
+    <!--    <string name="priority_0">common</string>-->
+    <!--    <string name="priority_1">important</string>-->
 
-    <!-- 广场 -->
-    <string name="square">Square</string>
-    <string name="my_share">My Share</string>
-    <string name="share_article">Share Article</string>
-    <string name="share_article_title">Article Title</string>
-    <string name="share_article_title_tip">Less than 100 words.</string>
-    <string name="share_article_link">Article Link</string>
-    <string name="share_article_link_tip">eg：https://www.wanandroid.com</string>
-    <string name="share_success">Share Success</string>
-    <string name="share_article_delete">Shared articles deleted</string>
-    <string name="audited">To be audited</string>
-    <string name="submit_ing">Submit...</string>
+    <!--    &lt;!&ndash; 广场 &ndash;&gt;-->
+    <!--    <string name="square">Square</string>-->
+    <!--    <string name="my_share">My Share</string>-->
+    <!--    <string name="share_article">Share Article</string>-->
+    <!--    <string name="share_article_title">Article Title</string>-->
+    <!--    <string name="share_article_title_tip">Less than 100 words.</string>-->
+    <!--    <string name="share_article_link">Article Link</string>-->
+    <!--    <string name="share_article_link_tip">eg：https://www.wanandroid.com</string>-->
+    <!--    <string name="share_success">Share Success</string>-->
+    <!--    <string name="share_article_delete">Shared articles deleted</string>-->
+    <!--    <string name="audited">To be audited</string>-->
+    <!--    <string name="submit_ing">Submit...</string>-->
 
-    <string name="empty_view_hint">暂无数据</string>
-    <string name="error_view_hint">加载失败</string>
-    <string name="no_network_view_hint">网络异常</string>
+    <!--    <string name="empty_view_hint">暂无数据</string>-->
+    <!--    <string name="error_view_hint">加载失败</string>-->
+    <!--    <string name="no_network_view_hint">网络异常</string>-->
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="left">left</string>
-    <string name="right">right</string>
-    <string name="main_moment">时刻</string>
-    <string name="main_found">发现</string>
-    <string name="main_message">消息</string>
-    <string name="main_mine">我的</string>
+    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <!--    <string name="left">left</string>-->
+    <!--    <string name="right">right</string>-->
+    <!--    <string name="main_moment">时刻</string>-->
+    <!--    <string name="main_found">发现</string>-->
+    <!--    <string name="main_message">消息</string>-->
+    <!--    <string name="main_mine">我的</string>-->
+
+    <!--    <string name="username">Username</string>-->
+    <!--    <string name="password">Password</string>-->
+
+    <!--    <string name="save">Save</string>-->
+    <!--    <string name="required">Required</string>-->
+    <!--    <string name="submit">Submit</string>-->
+    <!--    <string name="cancel">Cancel</string>-->
+    <!--    <string name="confirm">OK</string>-->
+    <!--    <string name="loading">Loading&#8230;</string>-->
+    <!--    <string name="request">Requesting &#8230;</string>-->
+    <!--    <string name="finish">Done</string>-->
+
+    <!--    <string name="em_main_title_home">Conversations</string>-->
+    <!--    <string name="em_main_title_friends">Contacts</string>-->
+    <!--    <string name="em_main_title_discover">Discover</string>-->
+    <!--    <string name="em_main_title_me">Me</string>-->
+    <!--    <string name="attach_user_card">Business Card</string>-->
+
+    <!--    <string name="demo_title_image_grid">Camera and Video</string>-->
+
+    <!--    <string name="em_dialog_default_title">Prompt</string>-->
+
+    <!--    <string name="main_home">Home</string>-->
+    <!--    <string name="main_friend">Contacts</string>-->
+    <!--    <string name="main_set">Settings</string>-->
+
+    <!--    <string name="em_login_name_hint">Username</string>-->
+    <!--    <string name="em_login_password_hint">Password</string>-->
+    <!--    <string name="em_login_token_hint">Token</string>-->
+    <!--    <string name="em_login_btn">Login</string>-->
+    <!--    <string name="em_login_tv_register">Register</string>-->
+    <!--    <string name="em_login_tv_token">Log in with token</string>-->
+    <!--    <string name="em_login_tv_pwd">Log in with password</string>-->
+    <!--    <string name="em_login_tv_reset_password">Reset Password</string>-->
+    <!--    <string name="em_login_btn_info_incomplete">Username or password cannot be empty.</string>-->
+    <!--    <string name="em_login_failed">Login failed</string>-->
+    <!--    <string name="em_login_agreement">By joining, you agree to our Terms of Service and Privacy Policy</string>-->
+    <!--    <string name="em_login_im">Login Easemob IM</string>-->
+    <!--    <string name="em_login_input_verification_code">Verification Code</string>-->
+    <!--    <string name="em_login_get_verification_code">Get Code</string>-->
+    <!--    <string name="em_login_phone_empty">Please enter mobile number</string>-->
+    <!--    <string name="em_login_code_empty">Please enter verification code</string>-->
+    <!--    <string name="em_login_phone_illegal">Please enter correct mobile number</string>-->
+    <!--    <string name="em_login_illegal_code">Incorrect Code</string>-->
+    <!--    <string name="em_login_post_code">Code Sent</string>-->
+    <!--    <string name="em_login_get_code_again">Get Code</string>-->
+    <!--    <string name="em_login_get_code_again_time">Get After(%1$ds)</string>-->
+    <!--    <string name="em_login_not_select_agreement">Please confirm Terms &amp; Policy</string>-->
+    <!--    <string name="em_login_error_send_code_later">Please wait a moment while trying to send</string>-->
+    <!--    <string name="em_login_error_send_code_limit">Access limit reached</string>-->
+    <!--    <string name="em_login_server_configure">Server Configure</string>-->
+    <!--    <string name="demo_login_dialog_content">Easemob attaches great importance to protecting your privacy. Please read the following Service and Privacy Policy carefully. Please click "OK" button to agree, and click "Deny" to exit the app.</string>-->
+    <!--    <string name="demo_login_dialog_content_privacy">Read the complete Service and Privacy Policy for more details.</string>-->
+    <!--    <string name="demo_login_dialog_cancel">Deny</string>-->
+    <!--    <string name="demo_login_dialog_confirm">OK</string>-->
+    <!--    <string name="demo_login_dialog_title">Service and Privacy Policy</string>-->
+
+    <!--    <string name="em_register_btn">Register \u0020</string>-->
+    <!--    <string name="em_register_password_confirm_hint">Confirm password</string>-->
+    <!--    <string name="em_register_failed">Registration failed</string>-->
+    <!--    <string name="em_register_success">Registration complete, please log in. </string>-->
+    <!--    <string name="em_register_privacy_agreement_url">http://www.easemob.com/protocol</string>-->
+    <!--    <string name="em_register_service_agreement_url">http://www.easemob.com/agreement</string>-->
+
+    <!--    <string name="em_password_confirm_error">The passwords don\'t match. Please enter them again. </string>-->
+    <!--    <string name="em_change_pwd_next">Next Step</string>-->
+    <!--    <string name="em_change_pwd_title">Change PassWord</string>-->
+    <!--    <string name="em_change_complete">complete</string>-->
+    <!--    <string name="em_new_pwd">New Password</string>-->
+    <!--    <string name="em_change_pwd">Change Password</string>-->
+    <!--    <string name="em_check_pwd">The passwords you entered are inconsistent</string>-->
+
+    <!--    <string name="em_error_network_error">Network unavailable</string>-->
+    <!--    <string name="em_error_not_login">You haven\'t logged in to Easemob</string>-->
+    <!--    <string name="em_error_parse_error">Parsing error</string>-->
+    <!--    <string name="em_error_err_unknown">Network error, please try again later. </string>-->
+    <!--    <string name="em_err_image_android_min_version">Image upload only supported in v4.4 and above</string>-->
+    <!--    <string name="em_err_file_not_exist">File does not exist</string>-->
+    <!--    <string name="em_add_self_error">You can\'t add yourself</string>-->
+    <!--    <string name="em_friend_error">This user is already your friend</string>-->
+    <!--    <string name="em_friend_black_error">This user is already your friend (on blocklist). Please remove this user from the blocklist. </string>-->
+    <!--    <string name="em_delete_sys_msg_error">Failed to delete message or this message does not exist</string>-->
+    <!--    <string name="em_error_group_no_members">No group members</string>-->
+    <!--    <string name="em_error_user_already_exist">Username already exists, please enter another one. </string>-->
+
+    <!--    <string name="demo_error_user_authentication_failed">Incorrect username or password</string>-->
+    <!--    <string name="demo_error_user_already_exist">Username already exists, please enter another one.</string>-->
+    <!--    <string name="demo_error_file_too_large">Attachments cannot exceed 10MB</string>-->
+
+    <!--    <string name="em_server_set_title">Use custom server?</string>-->
+    <!--    <string name="em_server_set_server_hint">Demo is bound to the following settings. To modify, first restart the app.</string>-->
+    <!--    <string name="em_server_set_appkey">Appkey</string>-->
+    <!--    <string name="em_server_set_apns_cert_name">APNs certificate name</string>-->
+    <!--    <string name="em_server_set_specify_server">Use private server:</string>-->
+    <!--    <string name="em_server_set_server_address">IM server address</string>-->
+    <!--    <string name="em_server_set_server_port">Port</string>-->
+    <!--    <string name="em_server_set_rest_server_address">RESTful server address</string>-->
+    <!--    <string name="em_server_set_https_set">Only use HTTPS:</string>-->
+    <!--    <string name="em_server_set_button_reset_text">Reset server settings</string>-->
+    <!--    <string name="em_server_set_dialog_reset">Restore default server settings?</string>-->
+    <!--    <string name="em_server_set_button_text">Save \u0020\u0020configuration\u0020</string>-->
+    <!--    <string name="em_server_set_appkey_empty_hint">Please set an app key</string>-->
+    <!--    <string name="em_server_set_im_server_empty_hint">Set the IM server address</string>-->
+    <!--    <string name="em_server_set_im_port_empty_hint">Set the IM port number</string>-->
+    <!--    <string name="em_server_set_rest_server_empty_hint">Set the RESTful server address</string>-->
+    <!--    <string name="em_server_open_develop_mode">Open develop mode?</string>-->
+    <!--    <string name="em_server_close_develop_mode">Close develop mode?</string>-->
+
+    <!--    <string name="em_empty_layout_content">Find Yourself, Be Yourself</string>-->
+
+    <!--    <string name="were_mentioned">[@Mentioning me]</string>-->
+    <!--    <string name="were_not_send_msg">[Draft]</string>-->
+    <!--    <string name="em_chat_et_hint">The entered content</string>-->
+    <!--    <string name="demo_chat_request_camera_permission">Camera permission is required to use the camera, please authorize</string>-->
+    <!--    <string name="demo_chat_request_read_external_storage_permission">Read external storage permission is required to use %1$s, please authorize</string>-->
+    <!--    <string name="demo_chat_request_location_permission">Location permission is required to send location message, please authorize</string>-->
+    <!--    <string name="demo_chat_request_audio_permission">Audio permission is required to send voice message, please authorize</string>-->
+    <!--    <string name="demo_chat_request_notifications">Notification permission is requires to notification function, please authorize</string>-->
+
+    <!--    <string name="demo_chat_file">file</string>-->
+    <!--    <string name="demo_chat_photo">photo album</string>-->
+    <!--    <string name="demo_chat_video">video</string>-->
+
+    <!--    <string name="em_search_text_hint">Search</string>-->
+
+    <!--    <string name="em_conversation_menu_video">Voice and video conference</string>-->
+    <!--    <string name="em_conversation_menu_group">Create group</string>-->
+    <!--    <string name="em_conversation_menu_friend">Add friend</string>-->
+    <!--    <string name="em_conversation_menu_search_friend">Add friend</string>-->
+    <!--    <string name="em_conversation_menu_search_group">Find group</string>-->
+    <!--    <string name="em_conversation_menu_scan">Scan</string>-->
+    <!--    <string name="em_conversation_system_notification">System notification</string>-->
+
+    <!--    <string name="demo_system_agree_invite">You\'ve accepted %1$s\'s friend request</string>-->
+    <!--    <string name="demo_system_agree_remote_user_apply_to_join_group">You\'ve approved %1$s\'s request to join the group</string>-->
+    <!--    <string name="demo_system_agree_received_remote_user_invitation">You\'ve accepted %1$s\'s invitation to the group</string>-->
+    <!--    <string name="demo_system_decline_invite">You\'ve declined %1$s\'s friend request</string>-->
+    <!--    <string name="demo_system_decline_remote_user_apply_to_join_group">You\'ve rejected %1$s\'s request to join the group</string>-->
+    <!--    <string name="demo_system_decline_received_remote_user_invitation">You\'ve declined %1$s\'s invitation to the group</string>-->
+    <!--    <string name="demo_system_other_decline_invite">%1$s has declined your friend request</string>-->
+    <!--    <string name="demo_system_other_decline_remote_user_apply_to_join_group">%1$s has rejected your request to join the group</string>-->
+    <!--    <string name="demo_system_other_decline_received_remote_user_invitation">%1$s has declined your invitation to the group</string>-->
+
+    <!--    <string name="em_add_contact_item_button_text">Add friend</string>-->
+    <!--    <string name="em_add_contact_item_button_text_added">Added</string>-->
+    <!--    <string name="em_add_contact_not_add_myself">You can\'t add yourself</string>-->
+    <!--    <string name="em_add_contact_user_already_in_contactlist">This user is already your friend (on blocklist). Please remove this user from the blocklist.</string>-->
+    <!--    <string name="em_add_contact_this_user_is_already_your_friend">This user is already your friend</string>-->
+    <!--    <string name="em_add_contact_add_a_friend">Add me as friend</string>-->
+    <!--    <string name="em_add_contact_send_successful">Friend request sent</string>-->
+
+    <!--    <string name="em_friends_new_chat">New friend</string>-->
+    <!--    <string name="em_friends_group_chat">Group chat</string>-->
+    <!--    <string name="em_friends_label">Tag</string>-->
+    <!--    <string name="em_friends_chat_room">Chat room</string>-->
+    <!--    <string name="em_friends_official_account">Official account</string>-->
+    <!--    <string name="em_friends_av_conference">Voice and video conference</string>-->
+    <!--    <string name="em_friends_move_into_the_blacklist_new">Add to blocklist</string>-->
+    <!--    <string name="em_friends_move_out_the_blacklist_new">Remove from blocklist</string>-->
+    <!--    <string name="em_friends_move_out_the_blacklist_hint">Remove this user from blocklist?</string>-->
+    <!--    <string name="em_friends_move_into_blacklist_success">User added to blocklist</string>-->
+    <!--    <string name="em_friends_move_out_blacklist_success">User removed from blocklist</string>-->
+
+    <!--    <string name="em_friends_detail_title">Personal profile</string>-->
+    <!--    <string name="em_friends_detail_note">Set remarks</string>-->
+    <!--    <string name="em_friends_detail_chat">Send message</string>-->
+    <!--    <string name="em_friends_detail_voice">Voice call</string>-->
+    <!--    <string name="em_friends_detail_video">Video call</string>-->
+    <!--    <string name="em_friends_detail_add_contact">Add to contacts</string>-->
+    <!--    <string name="em_friends_detail_add_black">Add to blocklist</string>-->
+
+    <!--    <string name="em_friends_group_contact_manage">Managed by me</string>-->
+    <!--    <string name="em_friends_group_contact_participate">Joined by me</string>-->
+    <!--    <string name="em_friends_group_contact_title">Group list</string>-->
+    <!--    <string name="em_friends_group_public">Public groups</string>-->
+    <!--    <string name="em_friends_group_join">Group list</string>-->
+
+    <!--    <string name="em_friends_chat_room_contact_title">Chat room list</string>-->
+    <!--    <string name="em_friends_chat_room_create">Create chat room</string>-->
+
+    <!--    <string name="demo_contact_add_black">%1$s added to blocklist</string>-->
+
+    <!--    <string name="em_chat_pick_user_title">Select contact</string>-->
+
+    <!--    <string name="em_chat_delete_title">Are you sure you want to delete?</string>-->
+
+    <!--    <string name="em_single_set_title">Chat details</string>-->
+    <!--    <string name="em_single_search_history">Find chat history</string>-->
+    <!--    <string name="em_single_clear_history">Clear chat history</string>-->
+    <!--    <string name="em_single_conversation_top">Pin conversation to top</string>-->
+    <!--    <string name="em_single_call_type">Select call type</string>-->
+
+    <!--    <string name="em_chat_delete_conversation">Are you sure you want to clear all chat history?</string>-->
+    <!--    <string name="em_chat_group_detail_title">Group info</string>-->
+    <!--    <string name="em_chat_group_detail_group_member">Group members</string>-->
+    <!--    <string name="em_chat_group_detail_member_num">%1$d</string>-->
+    <!--    <string name="em_chat_group_detail_name">Group name</string>-->
+    <!--    <string name="em_chat_group_detail_share_file">Shared files</string>-->
+    <!--    <string name="em_chat_group_detail_announcement">Group announcement</string>-->
+    <!--    <string name="em_chat_group_detail_announcement_hint">Enter the group announcement</string>-->
+    <!--    <string name="em_chat_group_detail_history">Find chat history</string>-->
+    <!--    <string name="em_chat_group_detail_clear_history">Clear chat history</string>-->
+    <!--    <string name="em_chat_group_detail_clear_history_warning">Are you sure you want to clear all chat history?</string>-->
+    <!--    <string name="em_chat_group_detail_member_manage">Group Management</string>-->
+    <!--    <string name="em_chat_group_detail_member_attribute">My nick name in group</string>-->
+    <!--    <string name="em_chat_group_detail_member_input">Please enter content here</string>-->
+    <!--    <string name="em_chat_group_detail_member_tips">After the nickname is modified, it will only be displayed in this group, and all members of the group can see it.</string>-->
+    <!--    <string name="em_chat_group_detail_introduction">Group intro</string>-->
+    <!--    <string name="em_chat_group_detail_introduction_hint">Enter the group introduction</string>-->
+    <!--    <string name="em_chat_group_detail_not_disturb">Do not disturb</string>-->
+    <!--    <string name="em_chat_group_detail_off_push">Block offline message push</string>-->
+    <!--    <string name="em_chat_group_detail_top">Pin conversation to top</string>-->
+    <!--    <string name="em_chat_group_detail_refund">Exit group</string>-->
+    <!--    <string name="em_chat_group_detail_dissolve">Disband group</string>-->
+    <!--    <string name="em_chat_group_save">Save</string>-->
+    <!--    <string name="em_chat_group_shared_files_upload">Upload</string>-->
+    <!--    <string name="em_chat_group_invite_group_member">Invite member</string>-->
+    <!--    <string name="em_chat_group_select_contact">Select contact</string>-->
+    <!--    <string name="em_chat_group_select_contact_save">Save</string>-->
+    <!--    <string name="em_chat_group_delivery_ack">Group receipt</string>-->
+    <!--    <string name="em_chat_group_read_ack">Read receipt</string>-->
+    <!--    <string name="em_chat_group_read_ack_send">Send</string>-->
+    <!--    <string name="em_chat_group_read_ack_hint">Enter the message content for receipt</string>-->
+    <!--    <string name="em_chat_group_black_manage">Blocklist management</string>-->
+    <!--    <string name="em_chat_group_mute_manage">Mute management</string>-->
+    <!--    <string name="em_chat_group_authority_transfer">Administrator/Group owner transfer</string>-->
+
+    <!--    <string name="em_group_member_type_title">Group members</string>-->
+    <!--    <string name="em_group_member_type_admin">Group administrator</string>-->
+    <!--    <string name="em_group_member_type_member">Group members</string>-->
+    <!--    <string name="em_group_member_type_member_num">%1$d in total</string>-->
+
+    <!--    <string name="demo_group_member_add_admin">%1$s\'s already an administrator</string>-->
+    <!--    <string name="demo_group_member_remove_admin">%1$s\'s no longer an administrator</string>-->
+    <!--    <string name="demo_group_member_add_black">%1$s already added to blocklist</string>-->
+    <!--    <string name="demo_group_member_remove_black">%1$s already removed from blocklist</string>-->
+    <!--    <string name="demo_group_member_mute">%1$s already muted</string>-->
+    <!--    <string name="demo_group_member_remove_mute">%1$s already unmuted</string>-->
+
+    <!--    <string name="demo_group_member_remove">%1$s already removed</string>-->
+    <!--    <string name="demo_group_member_invite">Group invitation already sent to %1$s</string>-->
+    <!--    <string name="demo_group_destroy">Group already deleted</string>-->
+
+    <!--    <string name="demo_chat_room_destroy">Chatroom already deleted</string>-->
+    <!--    <string name="demo_chat_room_add_member">%1$s already added to chat room</string>-->
+    <!--    <string name="demo_chat_room_remove_member">%1$s already removed</string>-->
+    <!--    <string name="demo_chat_room_modify_name">Chat room name already changed</string>-->
+    <!--    <string name="demo_chat_room_modify_description">Chat room description already changed</string>-->
+
+    <!--    <string name="em_group_new_title">Create group</string>-->
+    <!--    <string name="em_group_new_save">Done</string>-->
+    <!--    <string name="em_group_new_name">Name</string>-->
+    <!--    <string name="em_group_new_name_hint">Enter a group name</string>-->
+    <!--    <string name="em_group_new_profile">Intro</string>-->
+    <!--    <string name="em_group_new_profile_hint">Enter a group introduction</string>-->
+    <!--    <string name="em_group_max_users">Member quantity</string>-->
+    <!--    <string name="em_group_set_max_users">Member quantity</string>-->
+    <!--    <string name="em_group_members">Group members</string>-->
+    <!--    <string name="em_group_new_if_public">Public group</string>-->
+    <!--    <string name="em_group_new_if_public_uncheck_hint">Non-members cannot find this group</string>-->
+    <!--    <string name="em_group_new_if_public_check_hint">Non-members can find this group</string>-->
+    <!--    <string name="em_group_new_open_invite">Group members can invite new members</string>-->
+    <!--    <string name="em_group_new_open_invite_uncheck_hint">Only the group owner can invite new members</string>-->
+    <!--    <string name="em_group_new_open_invite_check_hint">Allow group members to invite new members</string>-->
+    <!--    <string name="em_group_new_need_owner_approval_public">Verification required for joining group</string>-->
+    <!--    <string name="em_group_new_need_owner_approval_uncheck_hint">Users can join the group immediately</string>-->
+    <!--    <string name="em_group_new_need_owner_approval_check_hint">Group owner must approve new members</string>-->
+    <!--    <string name="em_group_new_name_cannot_be_empty">Complete the group info</string>-->
+    <!--    <string name="em_group_new_member_limit">Member quantity: 3 to 3,000</string>-->
+    <!--    <string name="em_group_new_success">Group created</string>-->
+    <!--    <string name="em_group_new_invite_join_group">%1$s invited you to join group: %2$s</string>-->
+
+    <!--    <string name="em_authority_menu_add_admin">Set as administrator</string>-->
+    <!--    <string name="em_authority_menu_remove_admin">Remove administrator permission</string>-->
+    <!--    <string name="em_authority_menu_transfer_owner">Transfer group owner permission</string>-->
+    <!--    <string name="em_authority_menu_remove_member">Delete member</string>-->
+    <!--    <string name="em_authority_menu_add_black">Add to blocklist</string>-->
+    <!--    <string name="em_authority_menu_remove_black">Remove from blocklist</string>-->
+    <!--    <string name="em_authority_menu_mute">Mute</string>-->
+    <!--    <string name="em_authority_menu_unmute">Unmute</string>-->
+
+    <!--    <string name="em_authority_menu_admin_list">Administrator list</string>-->
+    <!--    <string name="em_authority_menu_member_list">Member list</string>-->
+    <!--    <string name="em_authority_menu_mute_list">Mute list</string>-->
+    <!--    <string name="em_authority_menu_black_list">Blocklist</string>-->
+    <!--    <string name="em_authority_menu_add_contact">Invite group member</string>-->
+
+    <!--    <string name="em_authority_remove_group">Remove this member from group?</string>-->
+
+    <!--    <string name="em_chat_room_detail_title">Chat room info</string>-->
+    <!--    <string name="em_chat_room_detail_id">Chat Room ID</string>-->
+    <!--    <string name="em_chat_room_detail_room_name">Name</string>-->
+    <!--    <string name="em_chat_room_detail_description">Description</string>-->
+    <!--    <string name="em_chat_room_detail_description_hint">No description</string>-->
+    <!--    <string name="em_chat_room_detail_owner">Creator</string>-->
+    <!--    <string name="em_chat_room_detail_members">Chat room members</string>-->
+    <!--    <string name="em_chat_room_detail_admins">Administrator</string>-->
+    <!--    <string name="em_chat_room_detail_out">Exit chat room</string>-->
+    <!--    <string name="em_chat_room_detail_destroy">Disband chat room</string>-->
+    <!--    <string name="em_chat_room_detail_destroy_info">Disband the chat room?</string>-->
+
+    <!--    <string name="em_chat_room_new_title">Create chat room</string>-->
+    <!--    <string name="em_chat_room_new_save">Save</string>-->
+    <!--    <string name="em_chat_room_new_name_hint">Chat room name</string>-->
+    <!--    <string name="em_chat_room_new_profile_hint">Chat room intro</string>-->
+    <!--    <string name="em_chat_room_new_name_cannot_be_empty">Chat room name cannot be empty.</string>-->
+
+    <!--    <string name="em_notify_title">System notification</string>-->
+    <!--    <string name="em_notify_agree">Approve</string>-->
+    <!--    <string name="em_notify_refuse">Decline</string>-->
+    <!--    <string name="em_notify_delete">Delete</string>-->
+    <!--    <string name="em_call_video_request">%1$s invited you to a video call</string>-->
+    <!--    <string name="em_call_voice_request">%1$s invited you to a voice call</string>-->
+    <!--    <string name="em_call_voice_calling">Waiting for other party to answer</string>-->
+
+    <!--    <string name="em_about_me_set">Settings</string>-->
+    <!--    <string name="em_about_me_feedback">Feedback</string>-->
+    <!--    <string name="em_about_me_hx">About Easemob IM</string>-->
+    <!--    <string name="em_about_me_developer">Developer Services</string>-->
+    <!--    <string name="em_about_me_developer_test">Developer Test</string>-->
+    <!--    <string name="em_about_email">Complaints and suggestions</string>-->
+    <!--    <string name="em_about_email_hint">Please enter your complaint suggestions</string>-->
+    <!--    <string name="em_set_security">Account and Security</string>-->
+    <!--    <string name="em_set_privacy">Privacy</string>-->
+    <!--    <string name="em_set_message_set">New Messages</string>-->
+    <!--    <string name="em_set_common_set">General</string>-->
+    <!--    <string name="em_about_me_service_set">Diagnostics</string>-->
+    <!--    <string name="em_privacy_black">Blocklist</string>-->
+    <!--    <string name="em_privacy_equipments">Multi-Device Management</string>-->
+    <!--    <string name="em_about_hx_product_introduction">Product introduction</string>-->
+    <!--    <string name="em_about_hx_company_introduction">About Company</string>-->
+    <!--    <string name="em_about_hx_version">Easemob IM %1$s</string>-->
+    <!--    <string name="em_developer_version">Current SDK Version</string>-->
+    <!--    <string name="em_developer_appkey_self">Custom AppKey</string>-->
+    <!--    <string name="em_developer_appkey_self_add">Add custom AppKey</string>-->
+    <!--    <string name="em_developer_appkey_delete">Delete custom AppKey?</string>-->
+    <!--    <string name="em_developer_appkey_default">Defaults</string>-->
+    <!--    <string name="em_developer_allow_token">Allow token login</string>-->
+    <!--    <string name="em_developer_from_server">Get messages from server first</string>-->
+    <!--    <string name="em_developer_upload_to_hx">Upload message attachments to server</string>-->
+    <!--    <string name="em_developer_upload_to_hx_notice">Upload attachments to server OR define another path.</string>-->
+    <!--    <string name="em_developer_msg_sort">Message Order</string>-->
+    <!--    <string name="em_developer_msg_sort_receive">By time received</string>-->
+    <!--    <string name="em_developer_msg_sort_server">By server</string>-->
+    <!--    <string name="em_developer_service_result_unfinished">Unfinished</string>-->
+    <!--    <string name="em_user_detail_title">Personal profile</string>-->
+    <!--    <string name="em_user_detail_avatar">Avatar</string>-->
+    <!--    <string name="em_user_detail_id">Easemob ID</string>-->
+    <!--    <string name="em_user_detail_nickname">Nickname</string>-->
+    <!--    <string name="em_login_out_hint">Exit now?</string>-->
+    <!--    <string name="em_developer_appkey_warning">The current app key and environment configuration have taken effect. To change the app key, you must restart the client!</string>-->
+    <!--    <string name="em_developer_appkey_confirm">Restart</string>-->
+
+    <!--    <string name="em_common_set_group_set">Group Settings</string>-->
+    <!--    <string name="em_common_set_chat_room_set">Chat Room Settings</string>-->
+
+    <!--    <string name="em_feedback_question_title">Select a problem type</string>-->
+    <!--    <string name="em_feedback_question_bug">Report a bug</string>-->
+    <!--    <string name="em_feedback_et_hint">Problem description</string>-->
+    <!--    <string name="em_feedback_email_title">Your email address</string>-->
+    <!--    <string name="em_feedback_email_hint">Enter the email address</string>-->
+    <!--    <string name="em_feedback_qq_title">Your QQ account</string>-->
+    <!--    <string name="em_feedback_qq_hint">Enter your QQ number</string>-->
+
+    <!--    <string name="em_conversation_list_search_hint">Search</string>-->
+    <!--    <string name="em_friend_list_search_hint">Search</string>-->
+    <!--    <string name="em_group_list_search_hint">Search</string>-->
+    <!--    <string name="em_chat_room_list_search_hint">Search</string>-->
+    <!--    <string name="em_black_list_search_hint">Search</string>-->
+    <!--    <string name="em_search_group">Group</string>-->
+    <!--    <string name="em_search_group_public">Public groups</string>-->
+    <!--    <string name="em_search_group_public_hint">Enter a Public Group ID to search</string>-->
+    <!--    <string name="em_search_group_chat">Group chat</string>-->
+    <!--    <string name="em_search_chat">Chat details</string>-->
+    <!--    <string name="em_search_chat_room">Chat room</string>-->
+    <!--    <string name="em_search_black">Blocklist</string>-->
+    <!--    <string name="em_search_conversation">Conversations</string>-->
+    <!--    <string name="em_search_contact">Contacts</string>-->
+    <!--    <string name="em_search_add_contact">Add friend</string>-->
+    <!--    <string name="em_search_add_contact_hint">Enter a User ID</string>-->
+
+    <!--    <string name="em_public_group_information">Public group info</string>-->
+    <!--    <string name="group_name">Group name</string>-->
+    <!--    <string name="group_owner">Owner</string>-->
+    <!--    <string name="em_public_group_introduce">Intro</string>-->
+    <!--    <string name="em_public_group_introduce_hint">No intro</string>-->
+    <!--    <string name="em_public_group_verification_information">Enter the verification info</string>-->
+    <!--    <string name="em_public_group_request_to_join">Request to join</string>-->
+    <!--    <string name="em_public_group_add">Join group chat</string>-->
+    <!--    <string name="send_the_request_is">Request sent. Please wait for the group owner to approve your request. </string>-->
+    <!--    <string name="Join_the_group_chat">You\'ve joined the group chat</string>-->
+    <!--    <string name="group_disabled">-disabled</string>-->
+
+    <!--    <string name="em_account_logoff_notification">Offline notification</string>-->
+    <!--    <string name="em_account_connect_conflict">This account is already logged in on another device</string>-->
+    <!--    <string name="em_account_user_remove">This user is already removed</string>-->
+    <!--    <string name="em_account_user_forbidden">User connection restricted by server</string>-->
+
+    <!--    <string name="demo_take_video_capture">Shoot video</string>-->
+
+    <!--    <string name="demo_no_disturb_time">Set a time slot</string>-->
+
+    <!--    <string name="push_message_style_title">Message Details</string>-->
+    <!--    <string name="push_incoming_call">You\'ve got a new call notification</string>-->
+    <!--    <string name="push_message_style_simple">Show unread messages only</string>-->
+    <!--    <string name="push_message_style_summary">Show message details</string>-->
+    <!--    <string name="push_message_show_detail">Show message details</string>-->
+    <!--    <string name="new_message_notify">New Message Notification</string>-->
+    <!--    <string name="newnotify">Enable notifications for new messages</string>-->
+    <!--    <string name="voice">Sound</string>-->
+    <!--    <string name="shake">Vibration</string>-->
+    <!--    <string name="push_settings">Do not disturb</string>-->
+    <!--    <string name="push_use_fcm">Message push uses FCM</string>-->
+    <!--    <string name="push_no_disturb">Do not show push messages (for GCM, Xiaomi, Huawei, and other devices)</string>-->
+    <!--    <string name="push_no_disturb_on">Enable</string>-->
+    <!--    <string name="push_only_on">Enable at night only (22:00 - 7:00)</string>-->
+    <!--    <string name="push_no_disturb_off">Close</string>-->
+    <!--    <string name="push_saving_settings">Saving...</string>-->
+    <!--    <string name="push_save_failed">Failed to save</string>-->
+    <!--    <string name="push_nick">Nickname</string>-->
+    <!--    <string name="input_new_nick_hint">Enter a new nickname</string>-->
+    <!--    <string name="nickname_description">After a nickname is set, it will be displayed in place of your Easemob ID on iOS devices during chats with the iOS client demo. If the other person is using an Android client, this nickname will not be displayed. </string>-->
+    <!--    <string name="yangshengqi">Play voice with speaker</string>-->
+    <!--    <string name="call_option">Call Settings</string>-->
+    <!--    <string name="offline_call_push">Offline push for call</string>-->
+    <!--    <string name="offline_push_no_disturb">Do not show push messages</string>-->
+    <!--    <string name="offline_default_time_range">22:00 - 07:00</string>-->
+    <!--    <string name="offline_time_rang_error">The start and end times cannot be the same</string>-->
+    <!--    <string name="demo_offline_nickname_update_success">Nickname changed</string>-->
+    <!--    <string name="demo_offline_nickname_update_failed">Failed to change nickname</string>-->
+    <!--    <string name="demo_offline_nickname_is_empty">Nickname is empty, please enter a nickname first.</string>-->
+    <!--    <string name="demo_head_image_update_success">Avatar changed</string>-->
+    <!--    <string name="demo_head_image_update_failed">Failed to change avatar</string>-->
+
+
+    <!--    <string name="title_msg_typing">Show input status</string>-->
+    <!--    <string name="chatroom_allow_owner_leave">Allow chat room owner to leave</string>-->
+    <!--    <string name="delete_msg_when_exit_group">Delete chat data upon group exit</string>-->
+    <!--    <string name="set_transfer_file_by_userself">No need for users to upload and download</string>-->
+    <!--    <string name="set_autodownload_thumbnail">Auto download image thumbnails</string>-->
+    <!--    <string name="auto_accept_group_invitation">Auto accept group invitations</string>-->
+    <!--    <string name="delete_msg_when_exit_chat_room">Delete chat data upon chat room exit</string>-->
+
+    <!--    <string name="confirm_forward_to">Are you sure you want to forward message to: %1$s ?</string>-->
+
+    <!--    <string name="Select_the_contact">Select contact</string>-->
+    <!--    <string name="emojicon_test_name">Example</string>-->
+    <!--    <string name="msg_conference_invite">Join the meeting now</string>-->
+    <!--    <string name="tips_select_contacts_first">Select a contact first</string>-->
+    <!--    <string name="alert_request_tobe_talker">Request to join chat&#8230;</string>-->
+    <!--    <string name="alert_request_tobe_audience">Request to leave chat&#8230;</string>-->
+    <!--    <string name="title_live">Interactive video</string>-->
+    <!--    <string name="msg_live_invite">%1$s invited you to an interactive video chat - %2$s</string>-->
+    <!--    <string name="tips_desk_share">You are sharing the current desktop</string>-->
+    <!--    <string name="tips_invite_to_join">%1$s invited you to join a video chat...</string>-->
+    <!--    <string name="alert_window_permission_denied">The current app does not have floating window permission.</string>-->
+    <!--    <string name="call_no_float_permission">No floating window permission</string>-->
+    <!--    <string name="call_open_float_permission">Grant floating window permission now?</string>-->
+
+    <!--    <string name="button_start_video_conference">Start video meeting (%1$d)</string>-->
+    <!--    <string name="button_send_user_card">Send business card</string>-->
+    <!--    <string name="search">Search</string>-->
+
+    <!--    <string name="em_map_title">Location info</string>-->
+
+    <!--    <string name="delete_message">Delete message</string>-->
+    <!--    <string name="copy">Copy</string>-->
+    <!--    <string name="forward">Forward</string>-->
+    <!--    <string name="recall">Recall</string>-->
+    <!--    <string name="delete">Delete</string>-->
+    <!--    <string name="resend">Resend</string>-->
+    <!--    <string name="delete_voice">Delete voice</string>-->
+    <!--    <string name="delete_video">Delete video</string>-->
+    <!--    <string name="delete_conversation">Delete conversation</string>-->
+    <!--    <string name="copy_message">Copy message</string>-->
+    <!--    <string name="em_send_forward_msg_success">Sent</string>-->
+    <!--    <string name="diagnose">Diagnostics</string>-->
+    <!--    <string name="Current_version">Current version</string>-->
+    <!--    <string name="Upload_the_log">Uploading log</string>-->
+    <!--    <string name="button_uploadlog">Upload runtime log</string>-->
+    <!--    <string name="Not_Set">Not set</string>-->
+    <!--    <string name="Log_uploaded_successfully">Log uploaded</string>-->
+    <!--    <string name="Log_Upload_failed">Failed to upload log</string>-->
+    <!--    <string name="default_appkey">Default</string>-->
+    <!--    <string name="button_logout">Sign Out</string>-->
+    <!--    <string name="Are_logged_out">Logging out...</string>-->
+
+    <!--    <string name="Agreed_to_your_group_chat_application">approved your group chat request</string>-->
+    <!--    <string name="Invite_you_to_join_a_group_chat">invited you to join a group chat</string>-->
+
+    <!--    <string name="Has_agreed_to_your_friend_request">approved your friend request</string>-->
+    <!--    <string name="Has_agreed_to_your_friend_refused">declined your friend request</string>-->
+    <!--    <string name="Request_to_add_you_as_a_friend">sent you a friend request</string>-->
+    <!--    <string name="Apply_to_the_group_of">applied to join group:</string>-->
+    <!--    <string name="invite_join_group">invited you to join group:</string>-->
+    <!--    <string name="Has_agreed_to">You\'ve approved the request from %1$s</string>-->
+    <!--    <string name="Has_refused_to">Rejected</string>-->
+    <!--    <string name="accept_join_group">%s approved the request to join group</string>-->
+    <!--    <string name="refuse_join_group">%s rejected the request to join group</string>-->
+
+    <!--    <string name="has_been_send">Sent</string>-->
+
+    <!--    <string name="the_current_chat_room_destroyed">This chat room has been disbanded by its creator</string>-->
+    <!--    <string name="quiting_the_chat_room">Leaving chat room...</string>-->
+    <!--    <string name="be_kicked_for_offline">Kicked out of chat room due to disconnection</string>-->
+
+    <!--    <string name="demo_group_listener_onInvitationReceived">%1$s invited you to join 「%2$s」</string>-->
+    <!--    <string name="demo_group_listener_onRequestToJoinReceived">%1$s requested to join 「%2$s」</string>-->
+    <!--    <string name="demo_group_listener_onRequestToJoinAccepted">%1$s approved your request to join 「%2$s」</string>-->
+    <!--    <string name="demo_group_listener_onRequestToJoinDeclined">%1$s rejected your request to join 「%2$s」</string>-->
+    <!--    <string name="demo_group_listener_onInvitationAccepted">Your request to join the group has been accepted by %1$s</string>-->
+    <!--    <string name="demo_group_listener_onInvitationDeclined">%1$s has rejected your request to join the group</string>-->
+    <!--    <string name="demo_group_listener_onUserRemoved">The group administrator removed you from 「%1$s」</string>-->
+    <!--    <string name="demo_group_listener_onGroupDestroyed">The group 「%1$s」 has been disbanded</string>-->
+    <!--    <string name="demo_group_listener_onAutoAcceptInvitationFromGroup">You\'ve joined 「%1$s」</string>-->
+    <!--    <string name="demo_group_listener_onMuteListAdded">%1$s has been muted by the group owner</string>-->
+    <!--    <string name="demo_group_listener_onMuteListRemoved">%1$s has been unmuted by the group owner</string>-->
+    <!--    <string name="demo_group_listener_onWhiteListAdded">%1$s has been added to the allowlist by the group owner</string>-->
+    <!--    <string name="demo_group_listener_onWhiteListRemoved">%1$s has been removed from the allowlist by the group owner</string>-->
+    <!--    <string name="demo_group_listener_onAllMemberMuteStateChanged_mute">Group owner has muted all members</string>-->
+    <!--    <string name="demo_group_listener_onAllMemberMuteStateChanged_not_mute">Group owner has unmuted all members</string>-->
+    <!--    <string name="demo_group_listener_onAdminAdded">%1$s has been made a group administrator by the group owner</string>-->
+    <!--    <string name="demo_group_listener_onAdminRemoved">%1$s\'s administrator permission has been canceled by the group owner</string>-->
+    <!--    <string name="demo_group_listener_onOwnerChanged">%1$s has transferred group ownership to %2$s</string>-->
+    <!--    <string name="demo_group_listener_onMemberJoined">%1$s has joined the group</string>-->
+    <!--    <string name="demo_group_listener_onMemberExited">%1$s has left the group</string>-->
+    <!--    <string name="demo_group_listener_onAnnouncementChanged">Group announcement updated.</string>-->
+    <!--    <string name="demo_group_listener_onSharedFileAdded">Group file %1$s uploaded.</string>-->
+    <!--    <string name="demo_group_listener_onSharedFileDeleted">Group file %1$s deleted.</string>-->
+
+    <!--    <string name="multi_device_contact_accept">Accept friend request from %s [remote]</string>-->
+    <!--    <string name="multi_device_contact_decline">Decline friend request from %s [remote]</string>-->
+    <!--    <string name="multi_device_contact_add">Send friend request to %s [remote]</string>-->
+    <!--    <string name="multi_device_contact_ban">Add %s to blocklist [remote]</string>-->
+    <!--    <string name="multi_device_contact_allow">Remove %s from blocklist [remote]</string>-->
+
+    <!--    <string name="multi_device_group_create">Create group [remote]</string>-->
+    <!--    <string name="multi_device_group_destroy">Disband group [remote]</string>-->
+    <!--    <string name="multi_device_group_join">Join group [remote]</string>-->
+    <!--    <string name="multi_device_group_leave">Leave group [remote]</string>-->
+    <!--    <string name="multi_device_group_apply">Apply to join group [remote]</string>-->
+    <!--    <string name="multi_device_group_apply_accept">Accept %s\'s request to join group [remote]</string>-->
+    <!--    <string name="multi_device_group_apply_decline">Reject %s\'s request to join group [remote]</string>-->
+    <!--    <string name="multi_device_group_invite">Invite %s to join group [remote]</string>-->
+    <!--    <string name="multi_device_group_invite_accept">Accept %s\'s request to join group [remote]</string>-->
+    <!--    <string name="multi_device_group_invite_decline">Reject %s\'s request to join group [remote]</string>-->
+    <!--    <string name="multi_device_group_kick">Remove %s from group [remote]</string>-->
+    <!--    <string name="multi_device_group_ban">Add %s to group blocklist [remote]</string>-->
+    <!--    <string name="multi_device_group_allow">Remove %s from group blocklist [remote]</string>-->
+    <!--    <string name="multi_device_group_block">Stop receiving group messages [remote]</string>-->
+    <!--    <string name="multi_device_group_unblock">Receive group messages [remote]</string>-->
+    <!--    <string name="multi_device_group_assign_owner">Transfer group ownership to %1$s [remote]</string>-->
+    <!--    <string name="multi_device_group_add_admin">Add %s as group administrator [remote]</string>-->
+    <!--    <string name="multi_device_group_remove_admin">Remove %s\'s administrator role [remote]</string>-->
+    <!--    <string name="multi_device_group_add_mute">Mute %s in group [remote]</string>-->
+    <!--    <string name="multi_device_group_remove_mute">Unmute %s in group [remote]</string>-->
+
+    <!--    <string name="multi_device_logged_in_device_kick_item">Remove device</string>-->
+
+    <!--    <string name="demo_chat_room_listener_onChatRoomDestroyed">Chat room %1$s already disbanded</string>-->
+    <!--    <string name="demo_chat_room_listener_onMemberJoined">%1$s joined chat room</string>-->
+    <!--    <string name="demo_chat_room_listener_onMemberExited">%1$s left chat room</string>-->
+    <!--    <string name="demo_chat_room_listener_onRemovedFromChatRoom">%1$s left chat room</string>-->
+    <!--    <string name="demo_chat_room_listener_onMuteListAdded">%1$s already muted</string>-->
+    <!--    <string name="demo_chat_room_listener_onMuteListRemoved">%1$s already unmuted</string>-->
+    <!--    <string name="demo_chat_room_listener_onWhiteListAdded">%1$s added to allowlist</string>-->
+    <!--    <string name="demo_chat_room_listener_onWhiteListRemoved">%1$s removed from allowlist</string>-->
+    <!--    <string name="demo_chat_room_listener_onAllMemberMuteStateChanged_mute">All members are muted</string>-->
+    <!--    <string name="demo_chat_room_listener_onAllMemberMuteStateChanged_note_mute">All members are unmuted</string>-->
+    <!--    <string name="demo_chat_room_listener_onAdminAdded">%1$s\'s now an administrator</string>-->
+    <!--    <string name="demo_chat_room_listener_onAdminRemoved">%1$s\'s no longer an administrator</string>-->
+    <!--    <string name="demo_chat_room_listener_onOwnerChanged">%1$s has transferred chat room to %2$s</string>-->
+    <!--    <string name="demo_chat_room_listener_onAnnouncementChanged">Chat room announcement has been updated.</string>-->
+
+    <!--    <string name="demo_contact_listener_onContactAdded">You\'ve added %1$s as a friend</string>-->
+    <!--    <string name="demo_contact_listener_onContactDeleted">You\'ve deleted your friend %1$s</string>-->
+    <!--    <string name="demo_contact_listener_onContactDeleted_by_other">%1$s has unfriended you</string>-->
+    <!--    <string name="demo_contact_listener_onContactInvited">%1$s wants to be your friend. Please accept the request. </string>-->
+    <!--    <string name="demo_contact_listener_onFriendRequestAccepted">Your friend request has been accepted</string>-->
+    <!--    <string name="demo_contact_listener_onFriendRequestDeclined">%1$s has declined your friend request</string>-->
+
+    <!--    <string name="alert_request_video">%1$s sent a video call request</string>-->
+    <!--    <string name="alert_request_voice">%1$s sent a voice call request</string>-->
+
+    <!--    <string name="share_screen_ongoing">Sharing screen...</string>-->
+
+    <!--    <string name="demo_call_options_min_video_kbps">Min video bitrate (Kbps)</string>-->
+    <!--    <string name="demo_call_options_not_set">Not set</string>-->
+    <!--    <string name="demo_call_options_max_video_kbps">Max video bitrate (Kbps)</string>-->
+    <!--    <string name="demo_call_options_max_frame_rate">Max framerate</string>-->
+    <!--    <string name="demo_call_options_external_audio_input">External audio input</string>-->
+    <!--    <string name="demo_call_options_audio_sample_rate">Audio sampling rate</string>-->
+    <!--    <string name="demo_call_options_back_camera">Rear camera</string>-->
+    <!--    <string name="demo_call_options_front_camera">Front camera</string>-->
+    <!--    <string name="demo_call_options_fix_video_resolution">Repair video resolution</string>-->
+    <!--    <string name="demo_call_options_record_on_server">Remote recording</string>-->
+    <!--    <string name="demo_call_options_merge_stream">Merge stream</string>-->
+    <!--    <string name="demo_call_options_watermark">Watermark</string>-->
+    <!--    <string name="demo_call_options_set_video_resolution">Set video resolution: %1$s</string>-->
+    <!--    <string name="demo_grid_file_null">No file content obtained</string>-->
+
+    <!--    <string name="title_activity_select_user_card">Select a friend</string>-->
+    <!--    <string name="title_activity_choose_head_image">Select an avatar</string>-->
+    <!--    <string name="demo_contact_get_userInfo_failed">Failed to get user properties</string>-->
+
+    <!--    <string name="demo_activity_label_video_call">video_call</string>-->
+    <!--    <string name="demo_activity_label_multi_call">multi_call</string>-->
+    <!--    <string name="no_image_resource">No image resources exist</string>-->
+    <!--    <string name="headset_insert">Headphones connected:  %1$b, with microphone: %2$b</string>-->
+    <!--    <string name="recording_error">Recording error has occurred. Stopping the recording</string>-->
+    <!--    <string name="no_sd_card">No SD card!</string>-->
+    <!--    <string name="personal_card">[Personal Business Card] </string>-->
+    <!--    <string name="video_call">Video call</string>-->
+    <!--    <string name="voice_call">Voice call</string>-->
+    <!--    <string name="you">You</string>-->
+    <!--    <string name="intent_to_setting">Jump to remark settings</string>-->
+    <!--    <string name="maximum_of_group">The number of group members cannot exceed 3,000!</string>-->
+    <!--    <string name="intent_to_service">Jump to Terms of Service</string>-->
+    <!--    <string name="intent_to_privacy_protocol">Jump to Privacy Policy</string>-->
+    <!--    <string name="in_order_of_reception">By time received</string>-->
+    <!--    <string name="by_server_time">By server time</string>-->
+    <!--    <string name="choose">Select</string>-->
+    <!--    <string name="title">Title</string>-->
+    <!--    <string name="optimization_suggestions">Optimization suggestions</string>-->
+    <!--    <string name="other">Other</string>-->
+    <!--    <string name="get_logged_failed">Failed to get logged in devices</string>-->
+    <!--    <string name="unbind_failed">Failed to unbind devicetokens</string>-->
+    <!--    <string name="account">Account:</string>-->
+    <!--    <string name="long_press_entry_to_remove_blacklist">Press and hold an item to remove it from the blocklist</string>-->
+    <!--    <string name="call_duration">Call duration</string>-->
+    <!--    <string name="agree_or_disagree">Do you accept?</string>-->
+    <!--    <string name="group_of_file">Group file</string>-->
+    <!--    <string name="retracting_message">Recall message</string>-->
+    <!--    <string name="become_friends">You are now friends and can start chatting.</string>-->
+
+    <!--    <string name="language_settings">Language Setting</string>-->
+    <!--    <string name="multilingual">Multilingual</string>-->
+    <!--    <string name="unable_translate">Unable to Translate</string>-->
+    <!--    <string name="using_translate">Using Translate</string>-->
+    <!--    <string name="retranslate_prompt">Each translation can be retranslated only once. The translation provided is for reference only.</string>-->
+    <!--    <string name="pull_down">drop-down refresh</string>-->
+    <!--    <string name="refreshing">Is refreshing...</string>-->
+    <!--    <string name="be_loading">Being loaded...</string>-->
+    <!--    <string name="release_refresh">Release the refresh</string>-->
+    <!--    <string name="refresh_finish">Refresh to complete</string>-->
+    <!--    <string name="refresh_failed">Refresh the failure</string>-->
+    <!--    <string name="last_update">M-d HH:mm</string>-->
+    <!--    <string name="loaded">Loaded</string>-->
+    <!--    <string name="load_failed">Load failed</string>-->
+
+
+    <!--    <string name="tab_politics">politics</string>-->
+    <!--    <string name="tab_yellow_related">pornography</string>-->
+    <!--    <string name="tab_advertisement">advertisement</string>-->
+    <!--    <string name="tab_abuse">abuse</string>-->
+    <!--    <string name="tab_violent">violent</string>-->
+    <!--    <string name="tab_contraband">contraband</string>-->
+    <!--    <string name="tab_other">other</string>-->
+
+    <!--    <string name="report_delete_title">Confirm the report?</string>-->
+
+    <!--    <string name="register_phone_number">Please enter your phone number</string>-->
+    <!--    <string name="phone_number">Phone Number</string>-->
+    <!--    <string name="localLogin">Internal Login</string>-->
+
+    <!--    <string name="action_report_label">report</string>-->
+    <!--    <string name="action_msg_edit">edit</string>-->
+    <!--    <string name="chat_temp_hint">For trial only, will be deleted after 72 hours</string>-->
+
+    <!--    <string name="demo_chat_swindle">This application is only used for functional development and testing of Huanxin products, do not use for illegal purposes. Anything involving money transfer, remittance, naked chat, online love, online shopping refund, investment and financing are all fraud, please do not believe.</string>-->
+
+    <!--    <string name="em_chat_edit_message">Edit Message</string>-->
+    <!--    <string name="card">Card</string>-->
+    <!--    <string name="demo_set_remark">Set Remark</string>-->
+    <!--    <string name="demo_add_remark">Add Remark</string>-->
 </resources>

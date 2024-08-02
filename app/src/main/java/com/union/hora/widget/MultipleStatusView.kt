@@ -1,4 +1,4 @@
-package com.union.hora.widget
+package com.widget
 
 import android.content.Context
 import android.util.AttributeSet

@@ -1,4 +1,4 @@
-package com.union.hora.widget.decoration
+package com.widget.decoration
 
 import android.graphics.Rect
 import android.view.View

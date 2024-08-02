@@ -1,4 +1,4 @@
-package com.union.hora.widget.decoration
+package com.widget.decoration
 
 import android.content.Context
 import android.graphics.Canvas

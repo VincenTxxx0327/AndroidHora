@@ -1,13 +1,14 @@
 package com.union.hora.app
 
+import android.annotation.SuppressLint
 import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.app.Application
 import android.content.ContentProvider
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
@@ -25,6 +26,9 @@ import com.union.hora.R
 import com.union.hora.app.constant.Constant
 import com.union.hora.app.ext.showToast
 import com.union.hora.http.bean.UserInfoBody
+import com.union.hora.hxsdk.DemoHelper
+import com.union.hora.hxsdk.common.impl.UserActivityLifecycleCallbacks
+import com.union.hora.hxsdk.common.utils.PreferenceManager
 import com.union.hora.utils.CommonUtil
 import com.union.hora.utils.DisplayManager
 import com.union.hora.utils.SettingUtil
@@ -33,7 +37,7 @@ import org.litepal.LitePal
 import java.util.*
 import kotlin.properties.Delegates
 
-class App : Application()  {
+class App : Application(), Thread.UncaughtExceptionHandler {
 
     companion object {
         val TAG = "hora_log"
@@ -97,6 +101,39 @@ class App : Application()  {
         initLitePal()
         initBugly()
         // AutoDensityUtil.init()
+        Thread.setDefaultUncaughtExceptionHandler(this)
+        PreferenceManager.init(this)
+        closeAndroidPDialog()
+        if (PreferenceManager.instance?.isAgreeAgreement == true) {
+            if (DemoHelper.instance?.autoLogin == true) {
+                DemoHelper.instance?.init(this)
+            }
+//            LocationClient.setAgreePrivacy(true)
+//            SDKInitializer.setAgreePrivacy(applicationContext, true)
+        }
+    }
+    @SuppressLint("SoonBlockedPrivateApi", "PrivateApi", "DiscouragedPrivateApi")
+    private fun closeAndroidPDialog() {
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.P) {
+            try {
+                val aClass = Class.forName("android.content.pm.PackageParser\$Package")
+                val declaredConstructor = aClass.getDeclaredConstructor(String::class.java)
+                declaredConstructor.setAccessible(true)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            try {
+                val cls = Class.forName("android.app.ActivityThread")
+                val declaredMethod = cls.getDeclaredMethod("currentActivityThread")
+                declaredMethod.isAccessible = true
+                val activityThread = declaredMethod.invoke(null)
+                val mHiddenApiWarningShown = cls.getDeclaredField("mHiddenApiWarningShown")
+                mHiddenApiWarningShown.isAccessible = true
+                mHiddenApiWarningShown.setBoolean(activityThread, true)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     /**
@@ -259,8 +296,8 @@ class App : Application()  {
             }
         }
     }
-
-    private val mActivityLifecycleCallbacks = object : ActivityLifecycleCallbacks {
+    private val mLifecycleCallbacks: UserActivityLifecycleCallbacks = UserActivityLifecycleCallbacks()
+    val mActivityLifecycleCallbacks = object : ActivityLifecycleCallbacks {
         override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             Log.d(TAG, "onCreated: " + activity.componentName.className)
         }
@@ -288,6 +325,9 @@ class App : Application()  {
         override fun onActivityDestroyed(activity: Activity) {
             Log.d(TAG, "onDestroy: " + activity.componentName.className)
         }
+    }
+
+    override fun uncaughtException(t: Thread, e: Throwable) {
     }
 
 

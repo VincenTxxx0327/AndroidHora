@@ -1,4 +1,4 @@
-package com.union.hora.widget.helper
+package com.widget.helper
 
 import android.annotation.SuppressLint
 import android.util.Log

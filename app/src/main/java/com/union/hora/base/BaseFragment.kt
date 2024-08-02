@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.union.hora.app.constant.Constant
-import com.union.hora.utils.CommonUtil
 import com.union.hora.utils.Preference
-import com.union.hora.widget.MultipleStatusView
+import com.widget.MultipleStatusView
 import leakcanary.AppWatcher
 import org.greenrobot.eventbus.EventBus
 

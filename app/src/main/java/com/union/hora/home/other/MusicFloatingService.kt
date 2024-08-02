@@ -9,7 +9,7 @@ import android.content.IntentFilter
 import android.os.IBinder
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.union.hora.business.music.MusicPlayerActivity
-import com.union.hora.widget.MusicFloatingView
+import com.widget.MusicFloatingView
 
 /**
  *

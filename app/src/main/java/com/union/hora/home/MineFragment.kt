@@ -15,7 +15,7 @@ import com.union.hora.business.user.repossitory.UserRepository
 import com.union.hora.home.contract.MineContract
 import com.union.hora.home.presenter.MinePresenter
 import com.union.hora.http.bean.UserIconBean
-import com.union.hora.widget.decoration.GridViewItemDecoration
+import com.widget.decoration.GridViewItemDecoration
 import kotlinx.android.synthetic.main.fragment_home_mine.*
 import kotlinx.android.synthetic.main.toolbar_base.*
 

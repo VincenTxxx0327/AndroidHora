@@ -1,6 +1,5 @@
 package com.union.hora.app.ext
 
-import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.util.Log
 import android.view.View
@@ -10,6 +9,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Checkable
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
@@ -18,7 +18,7 @@ import com.just.agentweb.DefaultWebClient
 import com.union.hora.BuildConfig
 import com.union.hora.R
 import com.union.hora.app.App
-import com.union.hora.widget.CustomToast
+import com.widget.CustomToast
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -1,4 +1,4 @@
-package com.union.hora.widget.behavior
+package com.widget.behavior
 
 import android.animation.ObjectAnimator
 import android.content.Context

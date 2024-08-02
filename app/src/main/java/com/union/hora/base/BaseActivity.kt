@@ -7,17 +7,22 @@ import android.content.Context
 import android.content.IntentFilter
 import android.graphics.Color
 import android.graphics.PixelFormat
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.*
+import android.view.Gravity
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.afollestad.materialdialogs.color.CircleView
 import com.union.hora.R
 import com.union.hora.app.constant.Constant
 import com.union.hora.app.receiver.NetworkChangeReceiver
-import com.union.hora.utils.*
-import com.union.hora.widget.MultipleStatusView
-import kotlinx.android.synthetic.main.toolbar_base.*
+import com.union.hora.utils.KeyBoardUtil
+import com.union.hora.utils.Preference
+import com.union.hora.utils.SettingUtil
+import com.union.hora.utils.StatusBarUtil
+import com.widget.MultipleStatusView
 import leakcanary.AppWatcher
 import org.greenrobot.eventbus.EventBus
 

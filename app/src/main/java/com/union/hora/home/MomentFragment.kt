@@ -20,8 +20,8 @@ import com.union.hora.home.presenter.repository.MomentRepository
 import com.union.hora.http.bean.Banner
 import com.union.hora.http.bean.Moment
 import com.union.hora.utils.GlideUtil
-import com.union.hora.widget.decoration.GridViewItemDecoration
-import com.union.hora.widget.manager.FullyStaggeredGridLayoutManager
+import com.widget.decoration.GridViewItemDecoration
+import com.widget.manager.FullyStaggeredGridLayoutManager
 import io.reactivex.rxjava3.core.Observable
 import kotlinx.android.synthetic.main.fragment_refresh_layout.*
 import kotlinx.android.synthetic.main.item_common_banner.view.*
@@ -77,12 +77,10 @@ class MomentFragment : BaseMvpFragment<MomentContract.View, MomentContract.Prese
         homeAdapter.run {
             addHeaderView(bannerView!!)
             val start = if (hasHeaderLayout()) 1 else 0
-            val end = if (hasFooterLayout() && loadMoreModule.hasLoadMoreView()) {
-                2
-            } else if (hasFooterLayout() || loadMoreModule.hasLoadMoreView()) {
-                1
-            } else {
-                0
+            val end = when {
+                (hasFooterLayout() && loadMoreModule.hasLoadMoreView()) -> 2
+                (hasFooterLayout() || loadMoreModule.hasLoadMoreView()) -> 1
+                else -> 0
             }
             gridViewItemDecoration.setNoShowSpace(start, end)
         }

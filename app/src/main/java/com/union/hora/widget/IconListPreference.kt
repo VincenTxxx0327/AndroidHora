@@ -1,4 +1,4 @@
-package com.union.hora.widget
+package com.widget
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AlertDialog
