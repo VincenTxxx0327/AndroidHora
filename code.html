@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-background": "#ffffff",
+              "on-tertiary-fixed-variant": "#6d6d6d",
+              "on-tertiary-container": "#565757",
+              "primary-container": "#829bff",
+              "on-error": "#490013",
+              "on-secondary-fixed": "#354500",
+              "on-surface-variant": "#adaaaa",
+              "primary": "#95aaff",
+              "outline": "#767575",
+              "inverse-surface": "#fcf9f8",
+              "secondary-fixed": "#c3f400",
+              "inverse-primary": "#004cef",
+              "surface-container-highest": "#262626",
+              "on-primary-fixed": "#000000",
+              "on-error-container": "#ffb2b9",
+              "secondary": "#c3f400",
+              "on-tertiary-fixed": "#505050",
+              "error": "#ff6e84",
+              "error-container": "#a70138",
+              "on-secondary": "#455900",
+              "background": "#0e0e0e",
+              "tertiary-fixed-dim": "#f2f0f0",
+              "tertiary-dim": "#ecebea",
+              "tertiary-fixed": "#ffffff",
+              "on-surface": "#ffffff",
+              "secondary-fixed-dim": "#b7e500",
+              "secondary-dim": "#b7e500",
+              "surface-container-high": "#20201f",
+              "inverse-on-surface": "#565555",
+              "tertiary-container": "#ecebea",
+              "on-secondary-container": "#efffbc",
+              "surface-tint": "#95aaff",
+              "secondary-container": "#506600",
+              "primary-dim": "#3766ff",
+              "surface-container": "#1a1a1a",
+              "surface-container-low": "#131313",
+              "surface-dim": "#0e0e0e",
+              "surface": "#0e0e0e",
+              "on-tertiary": "#5f5f5f",
+              "primary-fixed": "#829bff",
+              "on-secondary-fixed-variant": "#4e6300",
+              "on-primary": "#00247e",
+              "on-primary-fixed-variant": "#002278",
+              "error-dim": "#d73357",
+              "surface-container-lowest": "#000000",
+              "tertiary": "#fbf9f9",
+              "outline-variant": "#484847",
+              "surface-bright": "#2c2c2c",
+              "primary-fixed-dim": "#6e8cff",
+              "surface-variant": "#262626",
+              "on-primary-container": "#001a63"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Lexend', sans-serif; }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-neutral-950/60 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full docked full-width top-0 sticky z-50 no-border bg-gradient-to-b from-neutral-900 to-transparent shadow-2xl shadow-blue-900/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/20">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of an athletic woman with a confident expression in cinematic high-contrast studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAem544JWQXUG62ogvuf0xAp01Nncl_wGgDiqXpUSjzFpefHRLhHorPDRxcnpB4xjcsyljsymEcYipi7PIvCp1IW6koy2gbqfAVKby4vyhU3gwPwkmCOQqqoiimt3KrQ52qe7VzZ0gIHQbvPx611WmuRlASekuvxiMBnMwfLxihol_eusQMLjc2ebTi8mmyJlfg09v9lTFinw06xgXHLiKYyQJN7cfEvdwX6YIADLxEBD-Jud9gThcNtCd2t3g6jOO7cxEhAf-VvQU"/>
+</div>
+<span class="text-blue-300 dark:text-blue-300 italic font-black font-lexend tracking-tighter uppercase text-3xl">KINETIC</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-blue-300 dark:text-blue-200 active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 text-blue-300 dark:text-blue-200 active:scale-95 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="px-6 pt-4">
+<!-- Hero Section: Kinetic Movement -->
+<section class="relative h-64 w-full rounded-xl overflow-hidden mb-12">
+<img alt="High performance gear" class="w-full h-full object-cover" data-alt="Professional athlete sprinting on a dark track at night with blue neon motion blur and dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnsezrSon-06lqgre5I1vdrhUeBIOUPq_rTjpBo1xzJ2w8XVBdm5LB4DE7RTPcsNsm1M-QSJmh9Z-UIwEsVUTIOvvK_X8NPmg917zMhW8c8r9IdfRu9dC9gUwcqGgbm44-4eKDxMg6E6-BMCuexwzYZ1HhSQP2nTXHPMM_KM3R2R1lvBi2Md_gmwuVfZopChhwDmU_CuOYt---GYx6U0cj7W6LjfyL3Q2IzDcYTZ8IHEpjbE2KQPcITdHCZGj3bOHIjVlrTUWw_cM"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent flex flex-col justify-center px-8">
+<span class="text-secondary font-headline font-black text-sm tracking-[0.3em] uppercase mb-2">New Season</span>
+<h1 class="text-4xl md:text-6xl font-headline font-black tracking-tighter leading-none max-w-xs">LIMITLESS SPEED.</h1>
+<div class="mt-4">
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-headline font-bold text-sm hover:scale-105 transition-transform">SHOP ELITE</button>
+</div>
+</div>
+</section>
+<!-- Category Horizontal Scroll -->
+<section class="mb-10">
+<div class="flex items-end justify-between mb-6">
+<h2 class="text-2xl font-headline font-black tracking-tight italic">GEAR CATEGORIES</h2>
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest">Scroll to filter</span>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<!-- Footwear -->
+<div class="flex-shrink-0 w-40 h-48 bg-surface-container rounded-xl p-4 flex flex-col justify-between group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-primary text-3xl" data-icon="footprint">footprint</span>
+<div>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 text-[10px] font-bold tracking-widest uppercase">Performance</p>
+<h3 class="text-lg font-headline font-black group-hover:text-on-primary">FOOTWEAR</h3>
+</div>
+</div>
+<!-- Apparel -->
+<div class="flex-shrink-0 w-40 h-48 bg-surface-container rounded-xl p-4 flex flex-col justify-between group hover:bg-primary transition-all duration-300 cursor-pointer border-l-4 border-secondary">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-primary text-3xl" data-icon="apparel">apparel</span>
+<div>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 text-[10px] font-bold tracking-widest uppercase">Precision</p>
+<h3 class="text-lg font-headline font-black group-hover:text-on-primary">APPAREL</h3>
+</div>
+</div>
+<!-- Equipment -->
+<div class="flex-shrink-0 w-40 h-48 bg-surface-container rounded-xl p-4 flex flex-col justify-between group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-primary text-3xl" data-icon="fitness_center">fitness_center</span>
+<div>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 text-[10px] font-bold tracking-widest uppercase">Technical</p>
+<h3 class="text-lg font-headline font-black group-hover:text-on-primary">EQUIPMENT</h3>
+</div>
+</div>
+<!-- Recovery -->
+<div class="flex-shrink-0 w-40 h-48 bg-surface-container rounded-xl p-4 flex flex-col justify-between group hover:bg-primary transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-secondary group-hover:text-on-primary text-3xl" data-icon="self_care">self_care</span>
+<div>
+<p class="text-on-surface-variant group-hover:text-on-primary/80 text-[10px] font-bold tracking-widest uppercase">Bio-Flow</p>
+<h3 class="text-lg font-headline font-black group-hover:text-on-primary">RECOVERY</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Bento Grid -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-baseline gap-2">
+<h2 class="text-3xl font-headline font-black tracking-tighter">ELITE GEAR</h2>
+<span class="w-1.5 h-1.5 bg-secondary rounded-full animate-pulse"></span>
+</div>
+<button class="text-primary font-headline font-bold text-xs uppercase tracking-widest border-b border-primary/30">View All</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Product Card 1: Large Featured -->
+<div class="col-span-2 row-span-2 bg-surface-container rounded-xl overflow-hidden flex flex-col group">
+<div class="relative flex-grow h-80">
+<img alt="Nike Air Max" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Side profile of a sleek red performance running shoe on a minimal dark background with sharp directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfv7FWwRYI4HV23gAz7xnNsIf6GS4zSCcKkD3Tp-JQfcjHvDzQMGLfu3_vYyRGIHIJUyxp3hnsQHt4xuSCrvhlXC5Swb22u_3YEdHoO_1_kdLRz_Q0Yzsj70P6dkFmjaH0JBX4PjmCQj_Zl8C8BegLB0VEId-eZFZCOHejzyTOsu3u7JjHRGMPfTrT5-Yk_hXJvYKs48TmLahTun99iSNQZLthdHz4ywVNk6_0jC9vCw9ZFLoWtmk0prAUoLncgVRPZtkiJWLss2c"/>
+<div class="absolute top-4 right-4 bg-secondary text-on-secondary text-[10px] font-black px-3 py-1 rounded-full uppercase">Top Rated</div>
+</div>
+<div class="p-6 bg-gradient-to-t from-surface-container-highest to-surface-container">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h3 class="text-2xl font-headline font-black tracking-tight leading-none mb-1">VELOCITY X-1</h3>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface-variant text-[10px] ml-1 font-bold">(128)</span>
+</div>
+</div>
+<span class="text-3xl font-headline font-black text-primary">$219</span>
+</div>
+<button class="w-full mt-4 bg-on-background text-background py-3 rounded-full font-headline font-black text-sm uppercase flex items-center justify-center gap-2 active:scale-95 transition-all">
+                            Add to Cart <span class="material-symbols-outlined text-sm" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="col-span-2 md:col-span-1 bg-surface-container-low rounded-xl overflow-hidden flex flex-col p-4 group">
+<div class="relative h-48 mb-4 rounded-lg overflow-hidden">
+<img alt="Dumbbells" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Two matte black hex dumbbells on a textured dark gym floor with dramatic top-down lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2_zLKgE_TxryDWN2iyljAp185pLTwtrbYoFzi_wc8kItn-KXSbyzpZKrb6Dw6yOaqjyKJxOEPiicOHrbaYF0cB0zQCq5Ee_tsZFOLR9P-OFxOed7_FzpitgKEZkcZQ9x8hXtyfs6EdJ3YxP7i-eo6e-kR3W-IgX5oJ3XCpWtXKOLpVI7BempeA-cUZT8VIfB30kfoCBnrwe5PleSRtCeDSFukxHFlTco-eq3PgKqEyAyQKE0OKFGyIdV1g7P1__QcI_-nN2y7jTI"/>
+</div>
+<h4 class="text-sm font-headline font-black tracking-tight mb-1">PRO-GRIP HEX 15KG</h4>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-secondary font-headline font-bold">$85</span>
+<div class="flex text-[8px] text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold ml-1 text-on-surface-variant text-[10px]">4.8</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="col-span-2 md:col-span-1 bg-surface-container-low rounded-xl overflow-hidden flex flex-col p-4 group">
+<div class="relative h-48 mb-4 rounded-lg overflow-hidden">
+<img alt="Gym bag" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Technical gray waterproof gym bag with black straps on a dark concrete pedestal with cool studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjlxzaiprFCWSb63VMVa_69SqYyIVElEmoj_IwvX2JMLdQAinxmQY_TZF8iW53-s2mvIj5FffUHR2lekQM8hl8RmMe_1fxZlTEh6lbvM74NOX5fDDuvO52wZFbIQliiwUgnXlnuLbh56V206ZYhSgyi5GrGrTTVOxcQ3Iy_PnJrKzceZks5jDo886jrjqUas8KpiWqC_3iLrGQkXPERn3bSeMkfpr1DnkSxAykaqWP9fwB71_LEyCVfMrxivsZrMdrRpzYS5FBe-Y"/>
+</div>
+<h4 class="text-sm font-headline font-black tracking-tight mb-1">TITAN DUFFEL 40L</h4>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-secondary font-headline font-bold">$110</span>
+<div class="flex text-[8px] text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold ml-1 text-on-surface-variant text-[10px]">4.9</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="col-span-2 md:col-span-1 bg-surface-container-low rounded-xl overflow-hidden flex flex-col p-4 group">
+<div class="relative h-48 mb-4 rounded-lg overflow-hidden">
+<img alt="Running Shirt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A compression-style athletic shirt displayed in a clean architectural dark space with subtle blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRhwmYZeUSNR5p5HAE5gAFWNnalQhePeDbrAPw3hacI9gBz8FpDA7Aqtc5vAEub3g2WUej04YFVCfguhMaQH0r72MbvBUoAIkvWlpzKW1-BBLqa2LTAGBwGj5-59dzgidxBzFPoCk_Vm04V3xwFf6h0-JuWYk6lTBFzBk77mxHdHjD7jCGznnSCHLxRiLpGCP0A6Ucm9Xnweon_lkdV6NgaP_6ceeQTcuq74lO44utFlZsN2KNCNdRg7y0l7XOKGB_peFdBZZhlnA"/>
+</div>
+<h4 class="text-sm font-headline font-black tracking-tight mb-1">AERO-DRY COMPRESSION</h4>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-secondary font-headline font-bold">$55</span>
+<div class="flex text-[8px] text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold ml-1 text-on-surface-variant text-[10px]">4.7</span>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="col-span-2 md:col-span-1 bg-surface-container-low rounded-xl overflow-hidden flex flex-col p-4 group">
+<div class="relative h-48 mb-4 rounded-lg overflow-hidden">
+<img alt="Resistance Bands" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Set of colorful high-quality latex resistance bands neatly coiled on a dark professional gym floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU3QlZIRZhHnEkKCEkZcbmliTo9MlxnCBS__CbivjHDqlyDg5lZSRgbhzhErfdgcFyQcJgAIXFUny_FLwDXppuHYiK5LhXWuycoszF0oYMTLNcpUexvlU-ql4UmdCKbtoqiR__tfclyb5V6lbK_U6hgWE7j7Lgsyncq1zRUWL2zlSu5IPRbMejkFXTwuFQ7yCQtPTAaiy2fG6K3qb1nu_mNLGbWMfH74gLjbl4e0eHAeYZ0TjOJzcrQ7jeYGM6i9rg987-afgL4Bc"/>
+</div>
+<h4 class="text-sm font-headline font-black tracking-tight mb-1">FLEX-RESIST KIT</h4>
+<div class="flex justify-between items-center mt-auto">
+<span class="text-secondary font-headline font-bold">$35</span>
+<div class="flex text-[8px] text-secondary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold ml-1 text-on-surface-variant text-[10px]">4.5</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community Action -->
+<section class="mb-20 glass-card p-8 rounded-xl border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+<div class="relative z-10">
+<h2 class="text-3xl font-headline font-black tracking-tighter mb-2 italic">JOIN THE SQUAD.</h2>
+<p class="text-on-surface-variant text-sm mb-6 max-w-sm">Get early access to drops, professional training programs, and exclusive elite-tier discounts.</p>
+<div class="flex gap-2">
+<input class="bg-surface-container-highest border-none rounded-full px-6 py-3 flex-grow text-xs font-bold tracking-widest focus:ring-1 focus:ring-primary" placeholder="ENTER EMAIL" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-headline font-black text-xs uppercase tracking-widest">JOIN</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<!--<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-neutral-900/80 backdrop-blur-2xl rounded-t-[3rem] overflow-hidden no-border shadow-[0_-8px_30px_rgb(0,0,0,0.5)]">-->
+<!--<a class="flex flex-col items-center justify-center text-neutral-500 opacity-70 hover:bg-neutral-800/80 hover:text-blue-200 transition-all active:scale-90 duration-150 ease-out" href="#">-->
+<!--<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>-->
+<!--<span class="font-lexend font-bold text-[10px] tracking-widest uppercase mt-1">Home</span>-->
+<!--</a>-->
+<!--<a class="flex flex-col items-center justify-center text-neutral-500 opacity-70 hover:bg-neutral-800/80 hover:text-blue-200 transition-all active:scale-90 duration-150 ease-out" href="#">-->
+<!--<span class="material-symbols-outlined text-2xl" data-icon="explore">explore</span>-->
+<!--<span class="font-lexend font-bold text-[10px] tracking-widest uppercase mt-1">Track</span>-->
+<!--</a>-->
+<!--<a class="flex flex-col items-center justify-center text-neutral-500 opacity-70 hover:bg-neutral-800/80 hover:text-blue-200 transition-all active:scale-90 duration-150 ease-out" href="#">-->
+<!--<span class="material-symbols-outlined text-2xl" data-icon="groups">groups</span>-->
+<!--<span class="font-lexend font-bold text-[10px] tracking-widest uppercase mt-1">Community</span>-->
+<!--</a>-->
+<!--<a class="flex flex-col items-center justify-center text-lime-400 bg-neutral-800/50 rounded-full px-5 py-2 ring-1 ring-lime-400/20 shadow-[0_0_15px_rgba(195,244,0,0.3)] active:scale-90 transition-all duration-150 ease-out" href="#">-->
+<!--<span class="material-symbols-outlined text-2xl" data-icon="shopping_bag">shopping_bag</span>-->
+<!--<span class="font-lexend font-bold text-[10px] tracking-widest uppercase mt-1">Shop</span>-->
+<!--</a>-->
+<!--</nav>-->
+</body></html>

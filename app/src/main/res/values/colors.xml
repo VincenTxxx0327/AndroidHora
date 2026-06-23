@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/theme_red</color>
+    <color name="colorPrimaryDark">@color/theme_switch</color>
+    <color name="colorAccent">@color/theme_red</color>
+    <color name="textColorPrimary">#616161</color>
+
+    <color name="theme_red">#FF2643</color>
+    <color name="theme_red_light">#FFCED4</color>
+    <color name="theme_gray">#F5F7FA</color>
+    <color name="theme_white">#FFFFFF</color>
+    <color name="theme_bak111">#111111</color>
+    <color name="theme_bak333">#333333</color>
+    <color name="theme_bak000">#000000</color>
+    <color name="theme_dot">#FD213B</color>
+    <color name="theme_button">#FE2D46</color>
+    <color name="theme_button_trans">#1AFE2D46</color>
+    <color name="theme_switch">#F92541</color>
+    <color name="theme_stroke">#DCE4EB</color>
+    <color name="theme_shade">#DEE4ED</color>
+    <color name="theme_shade_light">#EDF2F7</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="list_divider">@color/theme_shade</color>
+    <color name="list_divider_light">@color/theme_shade_light</color>
+    <color name="viewBackground">@color/white</color>
+    <color name="transparent_30">#4d000000</color>
+    <color name="transparent_70">#b2000000</color>
+    <color name="transparent_75">#ba000000</color>
+</resources>
