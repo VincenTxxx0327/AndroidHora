@@ -2,10 +2,8 @@ package com.union.hora.model
 
 enum class RefreshStrategy {
     INITIAL,
-    PARTIAL,
-    LOADING_REFRESH,
-    SILENT,
-    FORCE
+    MANUAL,
+    SILENT
 }
 
 data class PageResult(
@@ -25,11 +23,9 @@ data class PageResult(
 
     fun withLoading(strategy: RefreshStrategy = this.strategy): PageResult {
         return when (strategy) {
-            RefreshStrategy.INITIAL -> copy(isLoading = true, strategy = strategy)
-            RefreshStrategy.PARTIAL -> copy(isLoading = true, strategy = strategy)
-            RefreshStrategy.LOADING_REFRESH -> copy(isLoading = true, isForceRefreshing = true, strategy = strategy)
-            RefreshStrategy.SILENT -> copy(strategy = strategy)
-            RefreshStrategy.FORCE -> copy(isForceRefreshing = true, strategy = strategy)
+            RefreshStrategy.INITIAL -> copy(isLoading = true, isForceRefreshing = false, strategy = strategy)
+            RefreshStrategy.MANUAL -> copy(isForceRefreshing = true, isLoading = false, strategy = strategy)
+            RefreshStrategy.SILENT -> copy(isLoading = false, isForceRefreshing = false, strategy = strategy)
         }
     }
 
@@ -37,12 +33,19 @@ data class PageResult(
         return copy(chats = chats, isLoading = false, isForceRefreshing = false)
     }
 
-    fun updateData(transformer: (List<Chat>) -> List<Chat>): PageResult {
-        return copy(chats = transformer(chats), isLoading = false, isForceRefreshing = false)
+    /**
+     * 仅更新 chats 数据，保留当前 loading/forceRefreshing 状态。
+     * 用于局部操作（置顶/删除）避免意外清除刷新状态。
+     */
+    fun updateChats(newChats: List<Chat>): PageResult {
+        return copy(chats = newChats)
     }
 
-    fun withError(): PageResult {
-        return copy(isLoading = false, isForceRefreshing = false)
+    /**
+     * 更新数据并清除所有 loading 状态。用于数据加载完成。
+     */
+    fun updateData(chats: List<Chat>): PageResult {
+        return copy(chats = chats, isLoading = false, isForceRefreshing = false)
     }
 }
 

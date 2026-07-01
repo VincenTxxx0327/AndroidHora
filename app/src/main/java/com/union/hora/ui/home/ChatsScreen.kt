@@ -60,7 +60,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.SubcomposeAsyncImage
 import com.union.hora.model.Chat
-import com.union.hora.model.PageResult
 import com.union.hora.model.RefreshStrategy
 import com.union.hora.ui.ChatsViewModel
 import kotlinx.coroutines.launch
@@ -91,7 +90,7 @@ fun ChatsScreen() {
         ChatsTopBar(
             onSearchClick = { },
             onAddClick = { },
-            onRefreshClick = { viewModel.refresh(RefreshStrategy.FORCE) },
+            onRefreshClick = { viewModel.refresh(RefreshStrategy.MANUAL) },
             isForceRefreshing = pager.showForceRefreshing
         )
 

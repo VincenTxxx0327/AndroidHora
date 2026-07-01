@@ -109,6 +109,7 @@ dependencies {
     implementation(libs.longan.design)
     implementation(libs.agentweb.androidx)
     implementation(libs.gson)
+    implementation("com.tencent:mmkv:1.3.9")
     // OkHttp3 dependencies
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
@@ -134,8 +135,10 @@ dependencies {
     kapt(libs.google.dagger.hilt.compiler)
     // Testing dependencies
     testImplementation(libs.junit)
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 }

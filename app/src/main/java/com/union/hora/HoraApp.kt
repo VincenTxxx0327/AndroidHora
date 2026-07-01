@@ -6,6 +6,7 @@ import android.content.Context
 import android.hardware.display.DisplayManager
 import android.os.Bundle
 import android.util.Log
+import com.tencent.mmkv.MMKV
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.BuildConfig
 import com.orhanobut.logger.Logger
@@ -30,6 +31,7 @@ class HoraApp: Application(), Thread.UncaughtExceptionHandler {
         super.onCreate()
         instance = this
         context = applicationContext
+        MMKV.initialize(this)
         initConfig()
 //        DisplayManager.init(this)
 //        registerActivityLifecycleCallbacks(mActivityLifecycleCallbacks)

@@ -59,6 +59,8 @@ data class Chat(
 
 class ChatModel {
 
+    private val lock = Any()
+
     private fun timestampAt(daysAgo: Int, hour: Int, minute: Int): Long {
         val cal = Calendar.getInstance()
         cal.add(Calendar.DAY_OF_YEAR, -daysAgo)
@@ -124,34 +126,36 @@ class ChatModel {
 
     suspend fun getChatsFromLocal(): List<Chat> = withContext(Dispatchers.IO) {
         delay(400)
-        sortWithPinnedTop(localChats.toList())
+        synchronized(lock) {
+            sortWithPinnedTop(localChats.toList())
+        }
     }
 
-    fun pinLocally(chatId: String): List<Chat> {
+    fun pinLocally(chatId: String): List<Chat> = synchronized(lock) {
         val index = localChats.indexOfFirst { it.id == chatId }
         if (index >= 0) {
             localChats[index] = localChats[index].copy(isPinned = true)
         }
-        return sortWithPinnedTop(localChats.toList())
+        sortWithPinnedTop(localChats.toList())
     }
 
-    fun unpinLocally(chatId: String): List<Chat> {
+    fun unpinLocally(chatId: String): List<Chat> = synchronized(lock) {
         val index = localChats.indexOfFirst { it.id == chatId }
         if (index >= 0) {
             localChats[index] = localChats[index].copy(isPinned = false)
         }
-        return sortWithPinnedTop(localChats.toList())
+        sortWithPinnedTop(localChats.toList())
     }
 
-    fun deleteLocally(chatId: String): List<Chat> {
+    fun deleteLocally(chatId: String): List<Chat> = synchronized(lock) {
         localChats.removeAll { it.id == chatId }
-        return sortWithPinnedTop(localChats.toList())
+        sortWithPinnedTop(localChats.toList())
     }
 
-    fun restoreLocally(snapshot: List<Chat>): List<Chat> {
+    fun restoreLocally(snapshot: List<Chat>): List<Chat> = synchronized(lock) {
         localChats.clear()
         localChats.addAll(snapshot)
-        return sortWithPinnedTop(localChats.toList())
+        sortWithPinnedTop(localChats.toList())
     }
 
     suspend fun pinChatOnTim(chatId: String): Boolean = withContext(Dispatchers.IO) {
@@ -171,26 +175,28 @@ class ChatModel {
 
     suspend fun fetchChatsFromTim(): List<Chat> = withContext(Dispatchers.IO) {
         delay(1500)
-        val updatedChats = localChats.map { chat ->
-            if ((0..9).random() < 3) {
-                chat.copy(
-                    lastMessage = when ((0..4).random()) {
-                        0 -> "新消息来了"
-                        1 -> "[图片]"
-                        2 -> "[语音] 00:15"
-                        3 -> "[文件]"
-                        else -> "收到，好的"
-                    },
-                    timestamp = System.currentTimeMillis() - (0..3599).random() * 1000L,
-                    unreadCount = chat.unreadCount + (0..5).random()
-                )
-            } else {
-                chat
+        synchronized(lock) {
+            val updatedChats = localChats.map { chat ->
+                if ((0..9).random() < 3) {
+                    chat.copy(
+                        lastMessage = when ((0..4).random()) {
+                            0 -> "新消息来了"
+                            1 -> "[图片]"
+                            2 -> "[语音] 00:15"
+                            3 -> "[文件]"
+                            else -> "收到，好的"
+                        },
+                        timestamp = System.currentTimeMillis() - (0..3599).random() * 1000L,
+                        unreadCount = chat.unreadCount + (0..5).random()
+                    )
+                } else {
+                    chat
+                }
             }
+            localChats.clear()
+            localChats.addAll(updatedChats)
+            sortWithPinnedTop(localChats.toList())
         }
-        localChats.clear()
-        localChats.addAll(updatedChats)
-        sortWithPinnedTop(localChats.toList())
     }
 
     private fun sortWithPinnedTop(chats: List<Chat>): List<Chat> {
