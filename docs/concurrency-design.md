@@ -43,23 +43,23 @@
 
 ## 2. 功能点统计
 
-| 功能 | 描述 | UI表现 | 涉及模块 |
-|------|------|--------|----------|
-| 首次加载 | 进入页面加载本地数据 | 全屏 CircularProgressIndicator | ViewModel / ChatModel |
-| 手动刷新 | 点击刷新按钮，先上传队列再从TIM同步 | 顶栏 Refresh 图标转圈 | ViewModel / ChatModel |
-| 静默刷新 | 后台无感知刷新本地数据 | 无任何指示 | ViewModel / ChatModel |
-| 定时同步 | 每10秒从TIM获取最新数据 | 无任何指示 | ViewModel / ChatModel |
-| 左滑菜单 | 向左滑动露出"置顶/取消置顶"+"删除"按钮 | 80dp×2 操作区 | ChatsScreen |
-| 滑动唯一性 | 同一时刻仅一个item展开 | 其他item自动收起 | ChatsScreen |
-| 置顶/取消置顶 | 本地立即生效，异步上传TIM | 置顶标签 + 背景变灰 | ViewModel / ChatModel |
-| 删除会话 | 本地立即移除，异步上传TIM | item从列表消失 | ViewModel / ChatModel |
-| 操作队列去重 | Pin+Unpin抵消；同操作多次取最新时间戳 | 用户无感知 | ViewModel |
-| MMKV持久化 | 进程被杀后恢复未上传操作 | App重启后继续上传 | ActionStore |
-| 操作pending指示 | 上传中头像右下角显示绿色小转圈 | 16dp CircularProgressIndicator | ChatsScreen / ViewModel |
-| 未读角标 | 显示未读数，>99显示"99+" | 红色圆形角标 | ChatsScreen |
-| 时间戳格式化 | 刚刚/X分钟前/HH:mm/周几/d/M/yyyy年 | 右上角时间文本 | ChatModel |
-| Toast提示 | 操作成功/同步状态提示 | Toast | ViewModel / ChatsScreen |
-| 空列表状态 | 无聊天会话时显示提示 | 居中文字"暂无聊天会话" | ChatsScreen |
+| 功能点编号 | 功能 | 描述 | UI表现 | 涉及模块 |
+|-------|------|------|--------|----------|
+| D1    | 首次加载 | 进入页面加载本地数据 | 全屏 CircularProgressIndicator | ViewModel / ChatModel |
+| D2    | 手动刷新 | 点击刷新按钮，先上传队列再从TIM同步 | 顶栏 Refresh 图标转圈 | ViewModel / ChatModel |
+| D3    | 静默刷新 | 后台无感知刷新本地数据 | 无任何指示 | ViewModel / ChatModel |
+| D4    | 定时同步 | 每10秒从TIM获取最新数据 | 无任何指示 | ViewModel / ChatModel |
+| D5    | 左滑菜单 | 向左滑动露出"置顶/取消置顶"+"删除"按钮 | 80dp×2 操作区 | ChatsScreen |
+| D6    | 滑动唯一性 | 同一时刻仅一个item展开 | 其他item自动收起 | ChatsScreen |
+| D7    | 置顶/取消置顶 | 本地立即生效，异步上传TIM | 置顶标签 + 背景变灰 | ViewModel / ChatModel |
+| D8    | 删除会话 | 本地立即移除，异步上传TIM | item从列表消失 | ViewModel / ChatModel |
+| D9    | 操作队列去重 | Pin+Unpin抵消；同操作多次取最新时间戳 | 用户无感知 | ViewModel |
+| D10   | MMKV持久化 | 进程被杀后恢复未上传操作 | App重启后继续上传 | ActionStore |
+| D11   | 操作pending指示 | 上传中头像右下角显示绿色小转圈 | 16dp CircularProgressIndicator | ChatsScreen / ViewModel |
+| D12   | 未读角标 | 显示未读数，>99显示"99+" | 红色圆形角标 | ChatsScreen |
+| D13   | 时间戳格式化 | 刚刚/X分钟前/HH:mm/周几/d/M/yyyy年 | 右上角时间文本 | ChatModel |
+| D14   | Toast提示 | 操作成功/同步状态提示 | Toast | ViewModel / ChatsScreen |
+| D15   | 空列表状态 | 无聊天会话时显示提示 | 居中文字"暂无聊天会话" | ChatsScreen |
 
 ---
 
@@ -408,7 +408,6 @@ synchronized {
 
 | 缺点 | 影响 | 改进方向 |
 |------|------|----------|
-| **删除失败无回滚** | 本地已删除但TIM未同步，item永久丢失，用户无感知 | 删除前保存snapshot，失败时restoreLocally恢复 |
 | **10秒定时同步过于频繁** | 无操作时仍每10秒网络请求，浪费电量 | 改为WebSocket长连接推送，或30-60秒间隔 |
 | **processActionQueue持锁含网络请求** | tryLock成功后整个forEach(含delay 1s/操作)期间持锁，MANUAL刷新必然tryLock失败 | 将网络请求移到锁外，或改为更细粒度的per-action锁 |
 | **Toast互相覆盖** | 快速连续操作时toast被覆盖 | 改用Channel队列化toast |
