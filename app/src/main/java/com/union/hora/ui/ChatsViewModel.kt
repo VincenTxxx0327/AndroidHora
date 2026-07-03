@@ -3,12 +3,14 @@ package com.union.hora.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dylanc.longan.logInfo
+import com.union.hora.HoraApp
 import com.union.hora.model.Action
 import com.union.hora.model.ActionStore
 import com.union.hora.model.Chat
 import com.union.hora.model.ChatModel
 import com.union.hora.model.PageResult
 import com.union.hora.model.RefreshStrategy
+import com.union.hora.notification.NotificationHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -179,6 +181,7 @@ class ChatsViewModel : ViewModel() {
      */
     private suspend fun fetchFromTim(clearLoading: Boolean) {
         logInfo("[sync] fetchFromTim 开始，clearLoading=$clearLoading")
+        val oldChats = _currentPager.value.chats.associateBy { it.id }
         val updatedChats = chatModel.fetchChatsFromTim()
         _currentPager.update {
             if (clearLoading) {
@@ -187,6 +190,34 @@ class ChatsViewModel : ViewModel() {
             } else {
                 logInfo("[sync] fetchFromTim 完成，使用 updateChats 保留 loading 状态")
                 it.updateChats(updatedChats)
+            }
+        }
+        // 检测新消息并发送通知
+        notifyNewMessages(oldChats, updatedChats)
+    }
+
+    /**
+     * 比较新旧 chats，对有新消息的会话发送通知。
+     * 判定条件：lastMessage 变化 或 timestamp 变大（新消息到达）
+     */
+    private suspend fun notifyNewMessages(
+        oldChats: Map<String, Chat>,
+        newChats: List<Chat>
+    ) {
+        val context = HoraApp.context
+        newChats.forEach { newChat ->
+            val oldChat = oldChats[newChat.id]
+            val isNewMessage = oldChat == null ||
+                    (newChat.lastMessage != oldChat.lastMessage && newChat.timestamp > oldChat.timestamp)
+            if (isNewMessage) {
+                NotificationHelper.showNotification(
+                    context = context,
+                    title = newChat.name,
+                    subtitle = newChat.lastMessage,
+                    avatar = newChat.avatar,
+                    notifId = newChat.id.hashCode()
+                )
+                logInfo("[notif] 新消息通知: ${newChat.name} - ${newChat.lastMessage}")
             }
         }
     }
