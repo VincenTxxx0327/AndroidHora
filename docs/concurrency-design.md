@@ -392,6 +392,7 @@ synchronized {
 |------|------|
 | **乐观更新** | 用户操作即时反馈，不阻塞UI |
 | **操作队列去重** | Pin+Unpin抵消，同操作取最新，减少无意义网络请求 |
+| **上传失败自动重试** | 失败的操作保留在actionQueue中，上传循环每500ms重试，直至成功 |
 | **MMKV持久化** | 进程被杀后操作不丢失，重启自动恢复继续上传 |
 | **PageResult状态聚合** | 单一数据源，避免多StateFlow状态不一致 |
 | **updateChats vs initData** | 局部操作不清除刷新状态，避免顶栏转圈闪烁 |
@@ -401,6 +402,129 @@ synchronized {
 | **滑动唯一性** | activeSwipeChatId确保同一时刻仅一个item展开 |
 | **时间戳计算属性** | 实时格式化，数据层只存timestamp，展示层自动适配 |
 | **详细日志** | 结构化标签，便于排查上传失败和竞态问题 |
+
+### 7.1 上传失败自动重试机制
+
+操作（Pin/Unpin/Delete）上传TIM失败时，不会被丢弃，而是保留在 `actionQueue` 中，由上传循环每500ms自动重试。
+
+```
+用户操作 (如 Delete)
+  │
+  ↓
+enqueueAction(Action.Delete)
+  ├─ actionQueue[chatId] = action     ← 存入内存队列
+  └─ ActionStore.save(action)         ← 写入MMKV持久化
+  │
+  ↓
+上传循环 (500ms 检查)
+  │
+  ↓
+processActionQueue()
+  ├─ processMutex.tryLock()           ← 获取锁
+  ├─ synchronized { 取快照 }
+  │
+  ↓
+forEach action:
+  ├─ executeAction(action)            ← 调用TIM接口
+  │
+  ├─ 成功?
+  │   YES → synchronized {
+  │           actionQueue.remove(chatId)
+  │           ActionStore.remove(chatId)    ← 从内存+MMKV清除
+  │         }
+  │         clearPending(chatId)
+  │         toast "已删除会话"
+  │
+  │   NO  → 不做任何移除操作           ← action保留在actionQueue中
+  │         日志: "上传失败！保留在队列中，500ms后重试"
+  │
+  ↓
+unlock()
+  │
+  ↓ (500ms后)
+上传循环再次检查 → actionQueue仍非空 → 再次processActionQueue → 重试
+  │
+  ↓ (循环直至成功)
+成功 → 清除队列 + 清除MMKV + clearPending
+```
+
+**关键代码**（`ChatsViewModel.kt` L130-L148）：
+
+```kotlin
+actionsToProcess.forEach { action ->
+    val success = executeAction(action)    // 调用TIM
+    if (success) {
+        synchronized(actionQueue) {        // 成功才移除
+            actionQueue.remove(action.chatId)
+            ActionStore.remove(action.chatId)
+        }
+        clearPending(action.chatId)
+    } else {
+        // 失败: 不移除，保留在队列中，500ms后由上传循环重试
+    }
+}
+```
+
+### 7.2 MMKV 持久化与进程恢复机制
+
+操作入队时同步写入MMKV，上传成功时才从MMKV移除。进程被杀后重启时，从MMKV恢复未完成的操作。
+
+```
+                    ┌─────────────────────────┐
+                    │     用户操作入队          │
+                    │  enqueueAction(action)   │
+                    └──────────┬──────────────┘
+                               │
+                    ┌──────────↓──────────────┐
+                    │  synchronized(actionQueue)│
+                    │  ├─ actionQueue[chatId]  │ ← 内存队列
+                    │  └─ ActionStore.save()   │ ← MMKV写入
+                    └──────────┬──────────────┘
+                               │
+                    ┌──────────↓──────────────┐
+                    │    上传循环 processAction │
+                    │    executeAction()       │
+                    └──────────┬──────────────┘
+                               │
+                    ┌──────────↓──────────────┐
+                    │      上传成功?            │
+                    └──────┬───────┬──────────┘
+                      YES  │       │  NO
+                    ┌──────↓──┐  ┌──↓───────────────┐
+                    │同步清除  │  │保留在actionQueue  │
+                    │队列+MMKV│  │保留在MMKV         │
+                    └─────────┘  │500ms后重试        │
+                                 └──────────────────┘
+
+          ┌─────────────────────────────────────────┐
+          │            进程被杀 (kill / crash)       │
+          │  actionQueue (内存) → 丢失               │
+          │  MMKV (磁盘)     → 保留                  │
+          └─────────────────────┬───────────────────┘
+                                │
+          ┌─────────────────────↓───────────────────┐
+          │         App 重启                         │
+          │  ChatsViewModel.init {}                  │
+          │  → restorePendingActions()               │
+          │    → ActionStore.restoreAll()            │ ← 从MMKV读取
+          │    → actionQueue[chatId] = action        │ ← 恢复到内存
+          │    → markPending(chatId)                 │ ← 恢复pending状态
+          └─────────────────────┬───────────────────┘
+                                │
+          ┌─────────────────────↓───────────────────┐
+          │  startUploadLoop() 启动                  │
+          │  → actionQueue非空 → processActionQueue  │
+          │  → 继续上传直至成功                      │
+          └─────────────────────────────────────────┘
+```
+
+**三层保障**：
+
+| 层级 | 机制 | 保障场景 |
+|------|------|----------|
+| 第1层：内存队列 | `actionQueue` (ConcurrentHashMap) | 正常运行时500ms重试 |
+| 第2层：磁盘持久化 | MMKV `ActionStore` | 进程被杀后不丢失 |
+| 第3层：重启恢复 | `restorePendingActions()` | App重启自动恢复并继续上传 |
 
 ---
 
@@ -457,7 +581,17 @@ synchronized {
 | `showLoading only true when isLoading and chats empty` | showLoading计算属性 | 仅isLoading且chats为空时为true |
 | `showEmpty only true when chats empty and not loading` | showEmpty计算属性 | 仅chats为空且非loading时为true |
 
-### 10.2 Instrumented测试 (ChatsViewModelRaceConditionTest)
+### 10.2 单元测试 (ActionQueueRetryTest)
+
+| 用例 | 验证内容 | 关键断言 |
+|------|----------|----------|
+| `failed upload retains action then retry succeeds` | **核心**：上传失败→action保留→重试成功→移除 | 失败后size=1, 成功后size=0 |
+| `multiple failures then success` | 连续3次失败后第4次成功 | 前3次size=1, 第4次size=0 |
+| `partial failure retains only failed actions` | 3个action中1个失败 | 仅失败的action保留, 成功的已移除 |
+| `pin then unpin cancels action` | Pin+Unpin抵消后队列为空 | size=0, 无需上传 |
+| `delete overrides pin in queue` | Delete覆盖Pin | 队列中是Delete, 不是Pin |
+
+### 10.3 Instrumented测试 (ChatsViewModelRaceConditionTest)
 
 | 用例 | 验证内容 | 关键断言 |
 |------|----------|----------|
