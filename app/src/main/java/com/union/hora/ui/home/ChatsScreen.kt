@@ -60,17 +60,39 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.SubcomposeAsyncImage
 import com.union.hora.model.Chat
+import com.union.hora.model.PageResult
 import com.union.hora.model.RefreshStrategy
 import com.union.hora.ui.ChatsViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
 @Composable
-fun ChatsScreen() {
-    val viewModel: ChatsViewModel = viewModel()
+fun ChatsScreen(viewModel: ChatsViewModel = viewModel()) {
     val pager by viewModel.currentPager.collectAsState()
     val toast by viewModel.toast.collectAsState()
     val pendingActions by viewModel.pendingActions.collectAsState()
+
+    ChatsScreenContent(
+        pager = pager,
+        toast = toast,
+        pendingActions = pendingActions,
+        onRefresh = { viewModel.refresh(RefreshStrategy.MANUAL) },
+        onPinChat = { viewModel.pinChat(it) },
+        onDeleteChat = { viewModel.deleteChat(it) },
+        onConsumeToast = { viewModel.consumeToast() }
+    )
+}
+
+@Composable
+fun ChatsScreenContent(
+    pager: PageResult,
+    toast: String?,
+    pendingActions: Set<String>,
+    onRefresh: () -> Unit,
+    onPinChat: (Chat) -> Unit,
+    onDeleteChat: (Chat) -> Unit,
+    onConsumeToast: () -> Unit
+) {
     val listState = rememberLazyListState()
     val context = LocalContext.current
     var activeSwipeChatId by remember { mutableStateOf<String?>(null) }
@@ -78,7 +100,7 @@ fun ChatsScreen() {
     LaunchedEffect(toast) {
         toast?.let {
             android.widget.Toast.makeText(context, it, android.widget.Toast.LENGTH_SHORT).show()
-            viewModel.consumeToast()
+            onConsumeToast()
         }
     }
 
@@ -90,7 +112,7 @@ fun ChatsScreen() {
         ChatsTopBar(
             onSearchClick = { },
             onAddClick = { },
-            onRefreshClick = { viewModel.refresh(RefreshStrategy.MANUAL) },
+            onRefreshClick = onRefresh,
             isForceRefreshing = pager.showForceRefreshing
         )
 
@@ -121,8 +143,8 @@ fun ChatsScreen() {
                             isPending = pendingActions.contains(chat.id),
                             isActiveSwipe = activeSwipeChatId == chat.id,
                             onSwipeActive = { id -> activeSwipeChatId = id },
-                            onPin = { viewModel.pinChat(chat) },
-                            onDelete = { viewModel.deleteChat(chat) }
+                            onPin = { onPinChat(chat) },
+                            onDelete = { onDeleteChat(chat) }
                         )
                     }
                 }
@@ -446,8 +468,22 @@ fun ChatItemContent(chat: Chat, isPending: Boolean) {
     )
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun ChatsScreenPreview() {
-    ChatsScreen()
+    ChatsScreenContent(
+        pager = PageResult(
+            chats = listOf(
+                Chat("1", "张三", "https://randomuser.me/api/portraits/men/1.jpg", "最近怎么样？", System.currentTimeMillis(), 3, true),
+                Chat("2", "李四", "https://randomuser.me/api/portraits/women/2.jpg", "文档已收到", System.currentTimeMillis() - 3600000, 0, false),
+                Chat("3", "技术交流群", "https://randomuser.me/api/portraits/men/3.jpg", "架构师: 下周开会", System.currentTimeMillis() - 86400000, 15, false)
+            )
+        ),
+        toast = null,
+        pendingActions = emptySet(),
+        onRefresh = {},
+        onPinChat = {},
+        onDeleteChat = {},
+        onConsumeToast = {}
+    )
 }
