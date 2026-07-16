@@ -45,6 +45,7 @@ import com.dylanc.longan.screenWidth
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.material.icons.filled.Face
 import com.union.hora.ui.home.ChatsScreen
+import com.union.hora.ui.home.GuideScreen
 import com.union.hora.ui.widget.SimpleCenteredText
 
 class HomeActivity : AppCompatActivity() {
@@ -70,23 +71,62 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
     object Profile : Screen("profile", "我的", Icons.Default.Person)
 }
 
+// 引导页路由（无底部导航栏的独立全屏页面）
+private const val GUIDE_ROUTE = "guide"
+
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
+    // 引导页为全屏页面，隐藏底部导航栏
+    val showBottomBar = currentRoute != GUIDE_ROUTE
 
     Scaffold(
-        bottomBar = { BottomBar(navController = navController) }
+        bottomBar = {
+            if (showBottomBar) {
+                BottomBar(navController = navController)
+            }
+        }
     ) { innerPadding ->
+        // 需求4：不在此处对 NavHost 整体应用 innerPadding，
+        // 避免从 GuideScreen 返回时 bottomBar 出现导致 innerPadding 变化、
+        // GuideScreen 内容瞬间被往上顶。改为在各非 guide 页面内部单独应用。
         NavHost(
             navController = navController,
-            startDestination = Screen.Posts.route,
-            modifier = Modifier.padding(innerPadding)
+            startDestination = Screen.Posts.route
         ) {
-            composable(Screen.Posts.route) { PostsScreen() }
-            composable(Screen.Goods.route) { GoodsScreen() }
-            composable(Screen.Sports.route) { SportsScreen() }
-            composable(Screen.Chats.route) { ChatsScreen() }
-            composable(Screen.Profile.route) { ProfileScreen() }
+            composable(Screen.Posts.route) {
+                Box(Modifier.padding(innerPadding)) { PostsScreen() }
+            }
+            composable(Screen.Goods.route) {
+                Box(Modifier.padding(innerPadding)) { GoodsScreen() }
+            }
+            composable(Screen.Sports.route) {
+                Box(Modifier.padding(innerPadding)) { SportsScreen() }
+            }
+            composable(Screen.Chats.route) {
+                // 点击搜索图标导航至引导页
+                Box(Modifier.padding(innerPadding)) {
+                    ChatsScreen(
+                        onSearchClick = {
+                            navController.navigate(GUIDE_ROUTE) {
+                                launchSingleTop = true
+                            }
+                        }
+                    )
+                }
+            }
+            composable(Screen.Profile.route) {
+                Box(Modifier.padding(innerPadding)) { ProfileScreen() }
+            }
+            // 引导页：全屏页面，不应用 innerPadding，避免返回时布局跳变
+            composable(GUIDE_ROUTE) {
+                GuideScreen(
+                    onEnterApp = { navController.popBackStack() },
+                    onSkip = { navController.popBackStack() }
+                )
+            }
         }
     }
 }

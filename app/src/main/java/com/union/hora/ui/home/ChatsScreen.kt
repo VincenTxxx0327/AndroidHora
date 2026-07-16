@@ -67,7 +67,10 @@ import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
 @Composable
-fun ChatsScreen(viewModel: ChatsViewModel = viewModel()) {
+fun ChatsScreen(
+    viewModel: ChatsViewModel = viewModel(),
+    onSearchClick: () -> Unit = {}
+) {
     val pager by viewModel.currentPager.collectAsState()
     val toast by viewModel.toast.collectAsState()
     val pendingActions by viewModel.pendingActions.collectAsState()
@@ -76,6 +79,7 @@ fun ChatsScreen(viewModel: ChatsViewModel = viewModel()) {
         pager = pager,
         toast = toast,
         pendingActions = pendingActions,
+        onSearchClick = onSearchClick,
         onRefresh = { viewModel.refresh(RefreshStrategy.MANUAL) },
         onPinChat = { viewModel.pinChat(it) },
         onDeleteChat = { viewModel.deleteChat(it) },
@@ -88,6 +92,7 @@ fun ChatsScreenContent(
     pager: PageResult,
     toast: String?,
     pendingActions: Set<String>,
+    onSearchClick: () -> Unit,
     onRefresh: () -> Unit,
     onPinChat: (Chat) -> Unit,
     onDeleteChat: (Chat) -> Unit,
@@ -110,7 +115,7 @@ fun ChatsScreenContent(
             .background(Color(0xFFEDEDED))
     ) {
         ChatsTopBar(
-            onSearchClick = { },
+            onSearchClick = onSearchClick,
             onAddClick = { },
             onRefreshClick = onRefresh,
             isForceRefreshing = pager.showForceRefreshing
@@ -481,6 +486,7 @@ fun ChatsScreenPreview() {
         ),
         toast = null,
         pendingActions = emptySet(),
+        onSearchClick = {},
         onRefresh = {},
         onPinChat = {},
         onDeleteChat = {},
